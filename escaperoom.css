@@ -4,15 +4,15 @@ body{
 
 h1{
     font-family: "Rye", serif;
-    color:rgb(249, 242, 209);
-    text-shadow: 2px 2px black;
+    color:rgb(249, 245, 227);
+    text-shadow: 1px 1px 5px black;
     text-align: center;
 }
 
 h4{
     font-family: "Rye", serif;
-    color:rgb(249, 242, 209);
-    text-shadow: 2px 2px black;
+    color:rgb(249, 245, 227);
+    text-shadow: 1px 1px 5px black;
     text-align: center;
 }
 
@@ -36,7 +36,7 @@ h4{
     border-style: inset;
     border-radius: 10px;
     border-width: 10px;
-    background-color: black;
+    background-color: rgb(29, 29, 29);
     color: white;
     cursor: pointer;
 }
