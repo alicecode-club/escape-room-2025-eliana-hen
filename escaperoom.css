@@ -15,3 +15,13 @@ h4{
     text-shadow: 2px 2px black;
     text-align: center;
 }
+
+
+#button{
+    padding: 7px;
+    font-family: "Rye" , serif;
+    text-align:center;
+    border-style: inset;
+    border-radius: 10px;
+    border-width: 10px;
+}
