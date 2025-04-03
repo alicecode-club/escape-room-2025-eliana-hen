@@ -6,10 +6,12 @@ h1{
     font-family: "Rye", serif;
     color:rgb(249, 242, 209);
     text-shadow: 5px 5px black;
+    text-align: center;
 }
 
 h4{
     font-family: "Rye", serif;
     color:rgb(249, 242, 209);
     text-shadow: 2px 2px black;
+    text-align: center;
 }
