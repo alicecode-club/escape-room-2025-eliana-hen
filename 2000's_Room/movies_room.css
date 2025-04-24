@@ -9,3 +9,19 @@ body{
     margin-top: 280px;
     margin-left:510px;
 }
+
+#Iconic_Quotes{
+    background-color: plum;
+}
+
+.quotespics{
+    width: 300px;
+    height:200px;
+}
+#firstrow{
+    justify-content: center;
+    display:flex
+}
+#pickamovie{
+    justify-content: column;
+}
