@@ -12,6 +12,8 @@ body{
 
 #Iconic_Quotes{
     background-color: plum;
+    height:520px;
+    margin-left:20px;
 }
 
 .quotespics{
@@ -19,9 +21,18 @@ body{
     height:200px;
 }
 #firstrow{
-    justify-content: center;
-    display:flex
+    display:flex;
+    justify-content:space-around;
+    flex-direction:row;
 }
 #pickamovie{
-    justify-content: column;
+    justify-content: row;
+}
+#firstrowchoosing{
+    display:flex;
+    justify-content:space-around;
+}
+#secondrowchoosing{
+    display:flex;
+    justify-content:space-around;
 }
