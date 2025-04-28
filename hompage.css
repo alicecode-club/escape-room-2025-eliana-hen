@@ -1,5 +1,7 @@
-body{
-    background-image: url("background.jpeg");
+#background_future{
+    width: 100%; /* התמונה תמלא את המיכל */
+    height: auto; /* שמירה על פרופורציות */
+    border-radius: 8px; /* פינות מעוגלות */
 }
 h1,h2{
     color: black;
@@ -13,6 +15,7 @@ h1,h2{
     height: 100px;
     margin: 20px;
 }
+
 button{
     background-color: #33AFFF;
     border-radius: 30px ;
@@ -22,4 +25,17 @@ button{
     margin-right: 50vh 50vw;
     margin-left: 50vh 50vw;
     
+}
+.instructions{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+}
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
