@@ -66,17 +66,22 @@ h4{
     background-color:white;
 } 
 
-#riddles{
-    font-family:arial;
-    font-size:18px;
-    color:black;
+#riddles {
+    font-family: Arial;
+    font-size: 20px;
+    color: black;
     border-color: black;
-    background-color:white;
-    width:170px;
-    padding:20px;
+    background-color: white;
+    width: 170px;
+    padding: 20px;
     border-radius: 50px;
-    height:100px;
+    height: 100px;
+
+    position: relative;
+    left: 300px;   /* Move right */
+    top: 200px;    /* Move down */
 }
+
 
 #athena {
     display: flex;
