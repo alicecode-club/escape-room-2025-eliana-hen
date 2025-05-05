@@ -1,0 +1,83 @@
+body{
+    background-image: url("https://media.architecturaldigest.com/photos/579a7e9fb6c434ab487bc174/16:9/w_2580,c_limit/greek-architecture-001.jpg");
+}
+
+h1{
+    font-family: "Rye", serif;
+    color:rgb(249, 245, 227);
+    text-shadow: 1px 1px 5px black;
+    text-align: center;
+}
+
+h4{
+    font-family: "Rye", serif;
+    color:rgb(249, 245, 227);
+    text-shadow: 1px 1px 5px black;
+    text-align: center;
+}
+
+
+#button-container {
+    display: flex;
+    justify-content: center;  /* Centers horizontally */
+    align-items: center;  /* Centers vertically */
+    height: 100vh;  /* Full height of the screen */
+}
+
+#button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers exactly */
+    
+    padding: 7px;
+    font-family: "Rye", serif;
+    font-size: 20px;
+    border-style: inset;
+    border-radius: 10px;
+    border-width: 10px;
+    background-color: rgb(29, 29, 29);
+    color: white;
+    cursor: pointer;
+}
+
+
+
+#button:hover{
+    padding: 7px;
+    font-family: "Rye" , serif;
+    font-size:20px;
+    border-style: inset;
+    border-radius: 10px;
+    border-color: darkgrey;
+    border-width: 10px;
+    background-color:white;
+    color:black;
+}
+
+#button:active{
+    padding: 7px;
+    font-family: "Rye" , serif;
+    font-size:20px;
+    border-style: outset;
+    border-radius: 10px;
+    border-color: darkgrey;
+    border-width: 10px;
+    background-color:white;
+} 
+
+#riddles{
+    font-family:arial;
+    font-size:12px;
+    color:black;
+    background-color:white;
+}
+
+#athena {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: fixed;
+    bottom: 0;
+    margin: 0;
+}
