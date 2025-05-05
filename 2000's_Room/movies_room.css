@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Coral+Pixels&display=swap');
 body{
     background-image: url(https://i.pinimg.com/736x/19/26/96/1926962aa59a37472811089bf5201409.jpg);
     background-size:100vw 100vh;
@@ -35,4 +36,8 @@ body{
 #secondrowchoosing{
     display:flex;
     justify-content:space-around;
+}
+#firstriddletitle{
+    font-family: "Coral Pixels", serif;
+    margin-left:250px;
 }
