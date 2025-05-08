@@ -10,6 +10,24 @@
 <body>
     <img src="https://images.lifesizecustomcutouts.com/image/cache/catalog/neprod/H99997-500x500.png" alt="athena" id="athena">
     <div id="riddles">Answer my questions and you shall be able to continue</div>
-    
+
+        <div id="timer"></div>
+
+    <script>
+    let time = 5;
+
+    function countdown() {
+    if (time > 0) {
+        time--;
+        setTimeout(countdown, 1000);
+    } else {
+        document.getElementById("timer").textContent = "Time's up!";
+    }
+    }
+
+    countdown(); // start the timer
+    </script>
+
+        
 </body>
 </html>
