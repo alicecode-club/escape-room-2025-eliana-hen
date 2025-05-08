@@ -117,7 +117,7 @@ h4{
     align-items: flex-start;
 
     position: fixed;
-    bottom: 0px;
+    bottom: -50px;
     right: 30px; /* Pinned to right side */
     margin: 0;
 }
