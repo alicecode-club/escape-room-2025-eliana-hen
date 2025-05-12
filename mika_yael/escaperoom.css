@@ -106,20 +106,22 @@ h4{
 
     position: fixed;
     top: 200px;
-    right: 30px; /* Pinned to right side */
+    left: 400px; /* Pinned to right side */
 }
 
 
 
 #hephaestus {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-
+    justify-content: center;   /* center horizontally */
+    align-items: center;       /* center vertically */
+    height: 100%;
+    width: 60%;
+  
     position: fixed;
-    bottom: -50px;
-    right: 30px; /* Pinned to right side */
+    bottom: -100px;
+    left: 50%;                 /* move to center of screen */
+    transform: translateX(-50%);
     margin: 0;
-}
-
-
+  }
+  
