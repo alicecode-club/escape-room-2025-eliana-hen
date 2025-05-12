@@ -3,6 +3,7 @@
 body{
     background-image: url(https://i.pinimg.com/736x/19/26/96/1926962aa59a37472811089bf5201409.jpg);
     background-size:100vw 100vh;
+    
 }
 
 #lock{
@@ -55,7 +56,7 @@ body{
 }
 
 
-body {
+#pazzle{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
     background-image: url("images/קולנוע.jpg");
