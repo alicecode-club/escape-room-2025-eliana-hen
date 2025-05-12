@@ -10,7 +10,7 @@
 <body>
     <img src="https://images.vexels.com/media/users/3/188534/isolated/preview/68ef69c23c50af4c80c64294d96b3900-hephaistos-greek-god.png" alt="hephaestus" id="hephaestus">
     <div id="mission">My! It looks like someone broke the statue I made! You! Mortal! Help fix It!</div>
-    <div id="timer"></div>
+    <div id="timer2"></div>
 
     <script>
             let time = 5;
@@ -20,13 +20,13 @@
                     time--;
                     setTimeout(countdown, 1000);
                 } else {
-                    document.getElementById("timer").textContent = "Time's up!";
+                    document.getElementById("timer2").textContent = "Time's up!";
                     puzzle();
                 }
+            }
 
             function puzzle(){
-                window.location.href = "puzzle.html";
-            }
+                window.open("puzzle - p2.html", "_self");
             }
     </script>
 
