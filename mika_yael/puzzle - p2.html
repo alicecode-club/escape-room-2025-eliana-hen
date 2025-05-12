@@ -57,89 +57,118 @@
 <div id="puzzle-container"></div>
 
 <script>
-  const imageSrc = "https://cdn.thestonestudio.in/wp-content/uploads/2020/09/Apollo-the-Greek-God-Sculpture-in-Marble.png";
-  const container = document.getElementById('puzzle-container');
-  const size = 4;
-  const pieceSize = 100;
-  const positions = [];
+const imageSrc = "https://cdn.thestonestudio.in/wp-content/uploads/2020/09/Apollo-the-Greek-God-Sculpture-in-Marble.png";
+const container = document.getElementById('puzzle-container');
+const size = 4;
+const pieceSize = 100;
+const positions = [];
 
-  // Create the 4x4 grid slots
-  for (let row = 0; row < size; row++) {
-    for (let col = 0; col < size; col++) {
-      const slot = document.createElement('div');
-      slot.classList.add('slot');
-      slot.style.gridColumnStart = col + 1;
-      slot.style.gridRowStart = row + 1;
-      slot.dataset.correct = `${row}-${col}`;
-      container.appendChild(slot);
-    }
+// Create the 4x4 grid slots
+for (let row = 0; row < size; row++) {
+  for (let col = 0; col < size; col++) {
+    const slot = document.createElement('div');
+    slot.classList.add('slot');
+    slot.style.gridColumnStart = col + 1;
+    slot.style.gridRowStart = row + 1;
+    slot.dataset.correct = `${row}-${col}`;
+    container.appendChild(slot);
   }
+}
 
-  // Prepare correct positions
-  for (let row = 0; row < size; row++) {
-    for (let col = 0; col < size; col++) {
-      positions.push({ row, col });
-    }
+// Prepare correct positions
+for (let row = 0; row < size; row++) {
+  for (let col = 0; col < size; col++) {
+    positions.push({ row, col });
   }
+}
 
-  const shuffled = [...positions].sort(() => Math.random() - 0.5);
+const shuffled = [...positions].sort(() => Math.random() - 0.5);
 
-  shuffled.forEach((pos) => {
-    const piece = document.createElement('div');
-    piece.classList.add('piece');
-    piece.draggable = true;
-    piece.dataset.correct = `${pos.row}-${pos.col}`;
-    piece.style.backgroundImage = `url(${imageSrc})`;
-    piece.style.backgroundPosition = `-${pos.col * pieceSize}px -${pos.row * pieceSize}px`;
+shuffled.forEach((pos) => {
+  const piece = document.createElement('div');
+  piece.classList.add('piece');
+  piece.draggable = true;
+  piece.dataset.correct = `${pos.row}-${pos.col}`;
+  piece.style.backgroundImage = `url(${imageSrc})`;
+  piece.style.backgroundPosition = `-${pos.col * pieceSize}px -${pos.row * pieceSize}px`;
 
-    // Start at random position
-    piece.style.left = `${Math.random() * (window.innerWidth - pieceSize)}px`;
-    piece.style.top = `${Math.random() * (window.innerHeight - pieceSize)}px`;
+  // Start at random position
+  piece.style.left = `${Math.random() * (window.innerWidth - pieceSize)}px`;
+  piece.style.top = `${Math.random() * (window.innerHeight - pieceSize)}px`;
 
-    document.body.appendChild(piece);
+  document.body.appendChild(piece);
 
-    let offsetX = 0, offsetY = 0;
+  let offsetX = 0, offsetY = 0;
 
-    piece.addEventListener("dragstart", (e) => {
-      offsetX = e.offsetX;
-      offsetY = e.offsetY;
-    });
-
-    piece.addEventListener("dragend", (e) => {
-      const x = e.clientX - offsetX;
-      const y = e.clientY - offsetY;
-
-      piece.style.left = x + "px";
-      piece.style.top = y + "px";
-
-      const slots = document.elementsFromPoint(e.clientX, e.clientY)
-        .filter(el => el.classList.contains("slot"));
-
-      if (slots.length) {
-        const slot = slots[0];
-        const rect = slot.getBoundingClientRect();
-        const correctPos = piece.dataset.correct;
-        const slotPos = slot.dataset.correct;
-
-        // Only allow if slot is empty and correct
-        if (!slot.querySelector('.piece') && correctPos === slotPos) {
-          // Move into slot and lock
-          piece.draggable = false;
-          piece.classList.add("locked");
-          piece.style.border = "2px solid green";
-
-          // Remove absolute position styles
-          piece.style.left = "";
-          piece.style.top = "";
-          piece.style.position = "static";
-
-          slot.appendChild(piece);
-        } else {
-          piece.style.border = "2px solid red";
-        }
-      }
-    });
+  piece.addEventListener("dragstart", (e) => {
+    offsetX = e.offsetX;
+    offsetY = e.offsetY;
   });
+
+  piece.addEventListener("dragend", (e) => {
+    const x = e.clientX - offsetX;
+    const y = e.clientY - offsetY;
+
+    piece.style.left = x + "px";
+    piece.style.top = y + "px";
+
+    const slots = document.elementsFromPoint(e.clientX, e.clientY)
+      .filter(el => el.classList.contains("slot"));
+
+    if (slots.length) {
+      const slot = slots[0];
+      const rect = slot.getBoundingClientRect();
+      const correctPos = piece.dataset.correct;
+      const slotPos = slot.dataset.correct;
+
+      // Only allow if slot is empty and correct
+      if (!slot.querySelector('.piece') && correctPos === slotPos) {
+        // Move into slot and lock
+        piece.draggable = false;
+        piece.classList.add("locked");
+        piece.style.border = "2px solid green";
+
+        // Remove absolute position styles
+        piece.style.left = "";
+        piece.style.top = "";
+        piece.style.position = "static";
+
+        slot.appendChild(piece);
+
+        checkWin(); // ✅ <-- CHECK FOR VICTORY
+      } else {
+        piece.style.border = "2px solid red";
+      }
+    }
+  });
+});
+
+// ✅ Win-checking function
+function checkWin() {
+  const allSlots = document.querySelectorAll('.slot');
+  let correctCount = 0;
+
+  allSlots.forEach(slot => {
+    const piece = slot.querySelector('.piece');
+    if (piece && piece.dataset.correct === slot.dataset.correct) {
+      correctCount++;
+    }
+  });
+
+  if (correctCount === 16) {
+    let time = 2;
+
+    function countdown() {
+    if (time > 0) {
+        time--;
+        setTimeout(countdown, 1000);
+    } else{
+        alert("🎉 You did it!");
+    }
+  }
+}
+}
+
 </script>
 
 </body>
