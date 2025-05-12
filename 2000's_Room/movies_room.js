@@ -6,51 +6,51 @@ function Alert(){
 function checkAnswer() {
     var i = 0
     var select = document.getElementById("mammamia");
-    var answer = select.value;
+    // var answer = select.value;
     var correct = "mamma mia";
-    if (answer === correct) {
+    if (select === correct) {
         i++
   }
     var select = document.getElementById("gilmoregirls");
-    var answer = select.value;
+    // var answer = select.value;
     var correct = "gilmore girls";
-    if (answer === correct) {
+    if (select === correct) {
         i++
   }
   var select = document.getElementById("legallyblonde");
-    var answer = select.value;
+    // var answer = select.value;
     var correct = "legally blonde";
-    if (answer === correct) {
+    if (select === correct) {
         i++
   }
   var select = document.getElementById("meangirls");
-    var answer = select.value;
+    // var answer = select.value;
     var correct = "mean girls";
-    if (answer === correct) {
+    if (select === correct) {
         i++
   }
   var select = document.getElementById("clueless");
-    var answer = select.value;
+    // var answer = select.value;
     var correct = "clueless";
-    if (answer === correct) {
+    if (select === correct) {
         i++
   }
   var select = document.getElementById("gossipgirl");
-    var answer = select.value;
+    // var answer = select.value;
     var correct = "gossip girl";
-    if (answer === correct) {
+    if (select === correct) {
         i++
   }
   var select = document.getElementById("princessdiaries");
-    var answer = select.value;
+    // var answer = select.value;
     var correct = "princessdiaries";
-    if (answer === correct) {
+    if (select === correct) {
         i++
   }
   var select = document.getElementById("10thingsihateaboutyou");
-    var answer = select.value;
+    // var answer = select.value;
     var correct = "10 things i hate about you";
-    if (answer === correct) {
+    if (select === correct) {
         i++
   }
   console.log(i)
