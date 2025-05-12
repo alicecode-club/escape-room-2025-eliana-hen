@@ -3,57 +3,66 @@ function Alert(){
     var div = document.getElementById("Iconic_Quotes")
     div.removeAttribute("hidden");
 }
+    var i = 0
 function checkAnswer() {
     var i = 0
     var select = document.getElementById("mammamia");
-    // var answer = select.value;
+    var answer = select.value;
     var correct = "mamma mia";
-    if (select === correct) {
-        i++
+    console.log(answer)
+    console.log(correct)
+    if (answer == correct) {
+      i++
   }
     var select = document.getElementById("gilmoregirls");
-    // var answer = select.value;
+    var answer = select.value;
     var correct = "gilmore girls";
-    if (select === correct) {
+    if (answer === correct) {
         i++
   }
   var select = document.getElementById("legallyblonde");
-    // var answer = select.value;
+    var answer = select.value;
     var correct = "legally blonde";
-    if (select === correct) {
+    if (answer === correct) {
         i++
   }
   var select = document.getElementById("meangirls");
-    // var answer = select.value;
+    var answer = select.value;
     var correct = "mean girls";
-    if (select === correct) {
+    if (answer === correct) {
         i++
   }
   var select = document.getElementById("clueless");
-    // var answer = select.value;
+    var answer = select.value;
     var correct = "clueless";
-    if (select === correct) {
-        i++
+    if (answer === correct) {
+      i++
   }
   var select = document.getElementById("gossipgirl");
-    // var answer = select.value;
+    var answer = select.value;
     var correct = "gossip girl";
-    if (select === correct) {
+    if (answer === correct) {
         i++
   }
   var select = document.getElementById("princessdiaries");
-    // var answer = select.value;
-    var correct = "princessdiaries";
-    if (select === correct) {
+    var answer = select.value;
+    var correct = "princess diaries";
+    if (answer === correct) {
         i++
   }
   var select = document.getElementById("10thingsihateaboutyou");
-    // var answer = select.value;
-    var correct = "10 things i hate about you";
-    if (select === correct) {
+    var answer = select.value;
+    var correct = "10 things I hate about you";
+    if (answer === correct) {
         i++
   }
-  console.log(i)
-  
+  if (i===8){
+    alert("You got " + i + " answers correct!");
+    alert("You Got It All Right! Let's Move On To The Next Riddle!")
+    // i need to add here the puzzle!!!!
+  }
+  else{
+    alert("You got " + i + " answers correct!");
+    alert("Well, You're Close! Try Again!" )
+  }  
 }
-
