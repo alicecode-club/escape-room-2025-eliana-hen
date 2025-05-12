@@ -10,6 +10,20 @@
 <body>
     <img src="https://images.vexels.com/media/users/3/188534/isolated/preview/68ef69c23c50af4c80c64294d96b3900-hephaistos-greek-god.png" alt="hephaestus" id="hephaestus">
     <div id="mission">My! It looks like someone broke the statue I made! You! Mortal! Help fix It!</div>
+    <div id="timer"></div>
+
+    <script>
+            let time = 5;
+
+            function countdown() {
+            if (time > 0) {
+                time--;
+                setTimeout(countdown, 1000);
+            } else {
+                document.getElementById("timer").textContent = "Time's up!";
+                firstFiveRiddles();
+            }
+    </script>
 
 </body>
 </html>
