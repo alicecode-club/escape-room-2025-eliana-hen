@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Farnese Atlas Puzzle (Fixed Lock)</title>
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+
+    #puzzle-container {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      margin: 40px auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: 1px;
+      border: 3px solid #fff;
+      background: #222;
+    }
+
+    .slot {
+      width: 100px;
+      height: 100px;
+      border: 1px dashed #666;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .piece {
+      width: 100px;
+      height: 100px;
+      background-size: 400px 400px;
+      position: absolute;
+      cursor: grab;
+      z-index: 100;
+      border: 1px solid #ccc;
+    }
+
+    .locked {
+      position: static !important;
+      cursor: default;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+<div id="puzzle-container"></div>
+
+<script>
+  const imageSrc = "https://cdn.thestonestudio.in/wp-content/uploads/2020/09/Apollo-the-Greek-God-Sculpture-in-Marble.png";
+  const container = document.getElementById('puzzle-container');
+  const size = 4;
+  const pieceSize = 100;
+  const positions = [];
+
+  // Create the 4x4 grid slots
+  for (let row = 0; row < size; row++) {
+    for (let col = 0; col < size; col++) {
+      const slot = document.createElement('div');
+      slot.classList.add('slot');
+      slot.style.gridColumnStart = col + 1;
+      slot.style.gridRowStart = row + 1;
+      slot.dataset.correct = `${row}-${col}`;
+      container.appendChild(slot);
+    }
+  }
+
+  // Prepare correct positions
+  for (let row = 0; row < size; row++) {
+    for (let col = 0; col < size; col++) {
+      positions.push({ row, col });
+    }
+  }
+
+  const shuffled = [...positions].sort(() => Math.random() - 0.5);
+
+  shuffled.forEach((pos) => {
+    const piece = document.createElement('div');
+    piece.classList.add('piece');
+    piece.draggable = true;
+    piece.dataset.correct = `${pos.row}-${pos.col}`;
+    piece.style.backgroundImage = `url(${imageSrc})`;
+    piece.style.backgroundPosition = `-${pos.col * pieceSize}px -${pos.row * pieceSize}px`;
+
+    // Start at random position
+    piece.style.left = `${Math.random() * (window.innerWidth - pieceSize)}px`;
+    piece.style.top = `${Math.random() * (window.innerHeight - pieceSize)}px`;
+
+    document.body.appendChild(piece);
+
+    let offsetX = 0, offsetY = 0;
+
+    piece.addEventListener("dragstart", (e) => {
+      offsetX = e.offsetX;
+      offsetY = e.offsetY;
+    });
+
+    piece.addEventListener("dragend", (e) => {
+      const x = e.clientX - offsetX;
+      const y = e.clientY - offsetY;
+
+      piece.style.left = x + "px";
+      piece.style.top = y + "px";
+
+      const slots = document.elementsFromPoint(e.clientX, e.clientY)
+        .filter(el => el.classList.contains("slot"));
+
+      if (slots.length) {
+        const slot = slots[0];
+        const rect = slot.getBoundingClientRect();
+        const correctPos = piece.dataset.correct;
+        const slotPos = slot.dataset.correct;
+
+        // Only allow if slot is empty and correct
+        if (!slot.querySelector('.piece') && correctPos === slotPos) {
+          // Move into slot and lock
+          piece.draggable = false;
+          piece.classList.add("locked");
+          piece.style.border = "2px solid green";
+
+          // Remove absolute position styles
+          piece.style.left = "";
+          piece.style.top = "";
+          piece.style.position = "static";
+
+          slot.appendChild(piece);
+        } else {
+          piece.style.border = "2px solid red";
+        }
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

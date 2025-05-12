@@ -16,12 +16,17 @@
             let time = 5;
 
             function countdown() {
-            if (time > 0) {
-                time--;
-                setTimeout(countdown, 1000);
-            } else {
-                document.getElementById("timer").textContent = "Time's up!";
-                firstFiveRiddles();
+                if (time > 0) {
+                    time--;
+                    setTimeout(countdown, 1000);
+                } else {
+                    document.getElementById("timer").textContent = "Time's up!";
+                    puzzle();
+                }
+
+            function puzzle(){
+                window.location.href = "puzzle.html";
+            }
             }
     </script>
 
