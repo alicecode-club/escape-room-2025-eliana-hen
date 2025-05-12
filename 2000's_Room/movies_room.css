@@ -53,3 +53,82 @@ body{
     margin-top:50px;
 
 }
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    background-image: url("images/קולנוע.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding-bottom: 50px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px black;
+}
+
+h2 {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 3px black;
+}
+
+button {
+    background-color: darkred;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px black;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: crimson;
+}
+
+#pieces {
+    width: 800px;
+    height: 180px;
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    gap: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+    overflow-y: auto;
+}
+
+#pieces img {
+    width: 80px;
+    height: 80px;
+    cursor: grab;
+    border: 1px solid lightblue;
+}
+
+#board {
+    width: 400px;
+    height: 400px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 1px;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 0px 15px black;
+}
+
+#board img {
+    width: 80px;
+    height: 80px;
+    
+}

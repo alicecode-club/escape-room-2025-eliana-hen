@@ -66,3 +66,117 @@ function checkAnswer() {
     alert("Well, You're Close! Try Again!" )
   }  
 }
+
+const rows = 5;
+const columns = 5;
+let currTile;
+let otherTile;
+let turns = 0;
+
+window.onload = () => {
+    setupBoard();
+    setupPieces();
+};
+
+function setupBoard() {
+    const board = document.getElementById("board");
+    for (let i = 0; i < rows * columns; i++) {
+        const tile = document.createElement("img");
+        addDragEvents(tile);
+        board.append(tile);
+    }
+}
+
+function setupPieces() {
+    const pieces = [];
+    for (let i = 1; i <= rows * columns; i++) {
+        pieces.push(i.toString());
+    }
+
+    shuffleArray(pieces);
+
+    const piecesContainer = document.getElementById("pieces");
+    pieces.forEach(piece => {
+        const tile = document.createElement("img");
+        tile.src = `./images/${piece}.jpg`;
+        addDragEvents(tile);
+        piecesContainer.append(tile);
+    });
+}
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+function addDragEvents(tile) {
+    tile.addEventListener("dragstart", dragStart);
+    tile.addEventListener("dragover", dragOver);
+    tile.addEventListener("dragenter", dragEnter);
+    tile.addEventListener("dragleave", dragLeave);
+    tile.addEventListener("drop", dragDrop);
+    tile.addEventListener("dragend", dragEnd);
+}
+
+function dragStart() {
+    currTile = this;
+}
+
+function dragOver(e) {
+    e.preventDefault();
+}
+
+function dragEnter(e) {
+    e.preventDefault();
+}
+
+function dragLeave() {}
+
+function dragDrop() {
+    otherTile = this;
+}
+
+function dragEnd() {
+    if (!otherTile || currTile === otherTile || currTile.src.includes("blank")) {
+        return;
+    }
+
+    let currImg = currTile.src;
+    let otherImg = otherTile.src;
+    currTile.src = otherImg;
+    otherTile.src = currImg;
+
+    turns++;
+    document.getElementById("turns").innerText = turns;
+
+    checkWin(); // <<< כאן אנחנו בודקים אם סיימנו
+}
+
+function resetGame() {
+    location.reload();
+}
+
+function checkWin() {
+    const boardTiles = document.querySelectorAll("#board img");
+    let correct = true;
+
+    boardTiles.forEach((tile, index) => {
+        const expectedSrc = `./images/${index + 1}.jpg`;
+        if (!tile.src.includes(expectedSrc)) {
+            correct = false;
+        }
+    });
+
+    if (correct) {
+        setTimeout(() => {
+            let answer = prompt("מה שם הסרט?");
+            if (answer === "Harry Potter") {
+                alert("כל הכבוד!");
+            } else {
+                alert("טעות! נסי שוב.");
+            }
+        }, 100);
+    }
+}

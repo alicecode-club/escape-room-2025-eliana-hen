@@ -119,7 +119,20 @@
           </select> 
         </div> 
         <button onclick="checkAnswer()" id = "checkanswersbutton">Check Your Answers</button>
-      </div> 
+      </div>
+      
+      <div hidden id="pazzle">
+        <h1>Avengers Puzzle</h1>
+        <h2>Moves: <span id="turns">0</span></h2>
+        <button onclick="resetGame()">🔄 Reset Game</button>
+    
+        <!-- לוח הפאזל נמצא עכשיו מעל החלקים -->
+        <div id="board"></div>
+        <div id="pieces"></div>
+      </div>
+        
+    
       <script src = "movies_room.js"></script> 
+
     </body>   
 </html>
