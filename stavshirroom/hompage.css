@@ -1,6 +1,7 @@
 body{
-    background-image:("background.jpeg");
+    background-image: url("background.jpeg");
     width: 100%; /* התמונה תמלא את המיכל */
+    background-repeat: no-repeat;
 }
 h1,h2{
     color: black;
@@ -23,6 +24,7 @@ button{
     padding: 15px 30px;
     margin-right: 50vh 50vw;
     margin-left: 50vh 50vw;
+    display: block;
     
 }
 .instructions{
