@@ -42,7 +42,9 @@
         console.log(riddleFour);
         let riddleFive=prompt("Who is Artemis' twin brother?").toLowerCase();
         console.log(riddleFive);
+        check(riddleOne , riddleTwo , riddleThree, riddleFour, riddleFive);
     }
+
     
     function check(ans1 , ans2 , ans3 , ans4 , ans5){
         if (ans1 === "zeus" && ans2 === "perseus" && ans3 === "fire" && ans4 === "demeter" && ans5 === "apollo"){
@@ -52,7 +54,9 @@
         }
 
         else{
-            alert = "try again"
+            alert("Try Again");
+            countdown();
+            firstFiveRiddles();
         }
     }
     }
