@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="escaperoom.css">
-    <script defer src="js/escaperoom.js"></script>
+    <script defer href="escaperoom.js"></script>
     <title>Part1-Athena</title>
 </head>
 <body>
@@ -16,6 +16,10 @@
         <div id="repeat"></div>
 
     <script>
+        function message1(){
+            document.getElementById("riddles").innerHTML = "Answer my questions and you shall be able to continue";
+        }
+        message1();
     let time = 5;
     let score = 0;
 
@@ -44,6 +48,7 @@
         if (ans1 === "zeus" && ans2 === "perseus" && ans3 === "fire" && ans4 === "demeter" && ans5 === "apollo"){
             score = 5;
             console.log(score);
+            document.getElementById("riddles").innerHTML = "Good. You shall continue now";
         }
 
         else{
