@@ -12,56 +12,59 @@
     <div id="riddles"></div>
 
         <div id="timer"></div>
+        <button id="button" type="button" onclick="nextPage2()">Next riddle!</button>
+
 
     <script>
-        function message1(){
+        document.getElementById("button").style.display = "none";
+
+        function message1() {
             document.getElementById("riddles").innerHTML = "Answer my questions and you shall be able to continue";
         }
+
         message1();
-    let time = 5;
-    let score = 0;
 
-    function countdown() {
-    if (time > 0) {
-        time--;
-        setTimeout(countdown, 1000);
-    } else {
-        document.getElementById("timer").textContent = "Time's up!";
-        firstFiveRiddles();
-    }
-    function firstFiveRiddles() {
-        let riddleOne= prompt("Who is the king of the gods?").toLowerCase();
-        console.log(riddleOne);
-        let riddleTwo= prompt("Who killed Medusa?").toLowerCase();
-        console.log(riddleTwo);
-        let riddleThree= prompt("What did Prometheus give to humans?").toLowerCase();
-        console.log(riddleThree);
-        let riddleFour= prompt("Who is the goddess of the harvest?").toLowerCase();
-        console.log(riddleFour);
-        let riddleFive=prompt("Who is Artemis' twin brother?").toLowerCase();
-        console.log(riddleFive);
-        check(riddleOne , riddleTwo , riddleThree, riddleFour, riddleFive);
-    }
+        let time = 5;
+        let score = 0;
 
-    
-    function check(ans1 , ans2 , ans3 , ans4 , ans5){
-        if (ans1 === "zeus" && ans2 === "perseus" && ans3 === "fire" && ans4 === "demeter" && ans5 === "apollo"){
-            score = 5;
-            console.log(score);
-            document.getElementById("riddles").innerHTML = "Good. You shall continue now";
+        function countdown() {
+            if (time > 0) {
+                time--;
+                setTimeout(countdown, 1000);
+            } else {
+                firstFiveRiddles(); // <-- this works now, because it's in global scope
+            }
         }
 
-        else{
-            alert("Try Again");
-            countdown();
-            firstFiveRiddles();
-        }
-    }
-    }
+        function firstFiveRiddles() {
+            let riddleOne = prompt("Who is the king of the gods?").toLowerCase();
+            let riddleTwo = prompt("Who killed Medusa?").toLowerCase();
+            let riddleThree = prompt("What did Prometheus give to humans?").toLowerCase();
+            let riddleFour = prompt("Who is the goddess of the harvest?").toLowerCase();
+            let riddleFive = prompt("Who is Artemis' twin brother?").toLowerCase();
 
-    countdown();
+            check(riddleOne, riddleTwo, riddleThree, riddleFour, riddleFive);
+        }
+
+        function check(ans1, ans2, ans3, ans4, ans5) {
+            if (
+                ans1 === "zeus" &&
+                ans2 === "perseus" &&
+                ans3 === "fire" &&
+                ans4 === "demeter" &&
+                ans5 === "apollo"
+            ) {
+                score = 5;
+                document.getElementById("riddles").innerHTML = "Good. You shall continue now";
+                document.getElementById("button").style.display = "block"; // ✅ This will now work
+            } else {
+                alert("Try Again");
+                firstFiveRiddles();
+            }
+        }
+
+        countdown();
     </script>
-<button id="button" type="button" onclick="nextPage2()">Next riddle!</button>
         
 </body>
 </html>
