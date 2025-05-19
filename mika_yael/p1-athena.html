@@ -12,6 +12,8 @@
     <div id="riddles">Answer my questions and you shall be able to continue</div>
 
         <div id="timer"></div>
+        <div id="next"></div>
+        <div id="repeat"></div>
 
     <script>
     let time = 5;
@@ -39,13 +41,13 @@
     }
     
     function check(ans1 , ans2 , ans3 , ans4 , ans5){
-        if (ans1 === "zeus"){
-            score++;
+        if (ans1 === "zeus" && ans2 === "perseus" && ans3 === "fire" && ans4 === "demeter" && ans5 === "apollo"){
+            score = 5;
             console.log(score);
         }
 
-        else if (ans === "perseus"){
-            
+        else{
+            alert = "try again"
         }
     }
     }
