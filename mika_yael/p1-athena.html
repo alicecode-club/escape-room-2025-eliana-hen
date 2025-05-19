@@ -15,6 +15,7 @@
 
     <script>
     let time = 5;
+    let score = 0;
 
     function countdown() {
     if (time > 0) {
@@ -25,13 +26,28 @@
         firstFiveRiddles();
     }
     function firstFiveRiddles() {
-        riddleOne= prompt("Who is the king of the gods?");
-        riddleTwo= prompt("What is the animal sacred to Ares?");
-        riddleThree= prompt("What did Prometheus give to humans?");
-        riddleFour= prompt("Who is the goddess of the harvest?");
-        riddleFive=prompt("Who is Artemis' twin brother?");
+        let riddleOne= prompt("Who is the king of the gods?").toLowerCase();
+        console.log(riddleOne);
+        let riddleTwo= prompt("Who killed Medusa?").toLowerCase();
+        console.log(riddleTwo);
+        let riddleThree= prompt("What did Prometheus give to humans?").toLowerCase();
+        console.log(riddleThree);
+        let riddleFour= prompt("Who is the goddess of the harvest?").toLowerCase();
+        console.log(riddleFour);
+        let riddleFive=prompt("Who is Artemis' twin brother?").toLowerCase();
+        console.log(riddleFive);
     }
-    //check answers
+    
+    function check(ans1 , ans2 , ans3 , ans4 , ans5){
+        if (ans1 === "zeus"){
+            score++;
+            console.log(score);
+        }
+
+        else if (ans === "perseus"){
+            
+        }
+    }
     }
 
     countdown();
