@@ -160,7 +160,6 @@ function dragEnd() {
     turns++;
     document.getElementById("turns").innerText = turns;
 
-    checkWin(); // <<< כאן אנחנו בודקים אם סיימנו
 }
 
 function resetGame() {
@@ -172,20 +171,27 @@ function checkWin() {
     let correct = true;
 
     boardTiles.forEach((tile, index) => {
-        const expectedSrc = `./images/${index + 1}.jpg`;
-        if (!tile.src.includes(expectedSrc)) {
+        const expected = `${index + 1}.jpg`;
+        if (!tile.src.includes(expected)) {
             correct = false;
         }
     });
 
     if (correct) {
-        setTimeout(() => {
-            let answer = prompt("מה שם הסרט?");
-            if (answer === "Harry Potter") {
-                alert("כל הכבוד!");
-            } else {
-                alert("טעות! נסי שוב.");
-            }
-        }, 100);
+        if (correct) {
+            setTimeout(() => {
+                let answer = prompt("מה שם הסרט?");
+                if (answer && answer.toLowerCase() === "harry potter") {
+                    alert("כל הכבוד!");
+                } else {
+                    alert("טעות! נסי שוב.");
+                }
+            }, 100);
+        }
+        
+    } else {
+        alert("הפאזל עדיין לא פתור.");
     }
 }
+
+
