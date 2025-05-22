@@ -16,7 +16,7 @@
     <img id="img2-h" alt="hades2" src="https://i.ytimg.com/vi/T9N7O0DMaAU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB0gRgXDUYXGzS42wQQYdhe5Mkriw">
     <div id="talking2"></div>
     <img id="img3-h" alt="hades3" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8e360559-b08a-4367-bcf3-0851f92ed33f/dfbuhq2-d046e390-f10b-4bad-9735-86dd8d5e2f7b.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzhlMzYwNTU5LWIwOGEtNDM2Ny1iY2YzLTA4NTFmOTJlZDMzZlwvZGZidWhxMi1kMDQ2ZTM5MC1mMTBiLTRiYWQtOTczNS04NmRkOGQ1ZTJmN2IucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ytdyoRTKzNbf1q1n07EVs_Z4F6Xnjbm9u7ZdYFvfb3A">
-    <img id="img4-h" alt="hades4" src="https://i.ytimg.com/vi/T9N7O0DMaAU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB0gRgXDUYXGzS42wQQYdhe5Mkriw">
+    <img id="img4-h" alt="hades4" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4b78ab0c-640e-4ab8-9bac-a19afa7dec78/dj6sxcd-ba31892a-dc37-402c-987f-e78e249e8494.png/v1/fill/w_1280,h_2630/hades_png_by_masterofau_dj6sxcd-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MjYzMCIsInBhdGgiOiJcL2ZcLzRiNzhhYjBjLTY0MGUtNGFiOC05YmFjLWExOWFmYTdkZWM3OFwvZGo2c3hjZC1iYTMxODkyYS1kYzM3LTQwMmMtOTg3Zi1lNzhlMjQ5ZTg0OTQucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.1PvwikIbXE6qlhxNHWFUSBgOP77-_VwS4cg005nsxEo">
     <div id="talking3"></div>
 
     <script>
@@ -33,6 +33,10 @@
 
         document.getElementById("talking1").innerHTML = "Hello you... Mortal. I just passed here, you know, thinking about how my brothers are up in the olympus while I'm there...";
         let time = 5;
+        let time2 = 2;
+        let time3 = 1;
+
+
 
         function countdown() {
             if (time > 0) {
@@ -44,28 +48,28 @@
                 document.getElementById("talking1").style.display = "none";
                 document.getElementById("talking2").style.display = "block";
                 document.getElementById("talking2").innerHTML = "IN HELL!!";
-                let time = 2;
                 countdown2();
             }
         }
 
         function countdown2() {
-            if (time > 0) {
-                time--;
-                setTimeout(countdown, 1000);
+
+            if (time2 > 0) {
+                time2--;
+                setTimeout(countdown2, 1000);
             } else {
                 document.getElementById("img2-h").style.display = "none";
                 document.getElementById("img3-h").style.display = "block";
                 document.getElementById("talking2").style.display = "none";
-                let time = 1;
                 countdown3();
             }
         }
 
         function countdown3() {
-            if (time > 0) {
-                time--;
-                setTimeout(countdown, 1000);
+
+            if (time3 > 0) {
+                time3--;
+                setTimeout(countdown3, 1000);
             } else {
                 document.getElementById("img3-h").style.display = "none";
                 document.getElementById("img4-h").style.display = "block";
