@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Coral+Pixels&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
 body{
-    background-image: url(https://i.pinimg.com/736x/19/26/96/1926962aa59a37472811089bf5201409.jpg);
+    background-image: url(https://i.pinimg.com/736x/7f/79/6c/7f796c2430eb6f3509ec803f1d28355b.jpg);
     background-size:100vw 100vh;
     
 }
@@ -10,8 +10,25 @@ body{
     background: none;
     border: none;
     margin-top: 280px;
-    margin-left:510px;
+    margin-left:524px;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    background: none;
+    padding: 0;
 }
+
+#lock:focus {
+  outline: none;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 
 #Iconic_Quotes{
     background-color: plum;
@@ -34,6 +51,11 @@ body{
     display:flex;
     justify-content:space-around;
 }
+#secondrow{
+    display:flex;
+    justify-content:space-around;
+    flex-direction:row;
+}
 #secondrowchoosing{
     display:flex;
     justify-content:space-around;
@@ -52,7 +74,7 @@ body{
     font-size:15px;
     margin-left:500px;
     margin-top:50px;
-
+    margin-bottom:20px;
 }
 
 
@@ -90,7 +112,7 @@ button {
 }
 
 button:hover {
-    background-color: crimson;
+    background-color: rgb(20, 157, 220);
 }
 
 #pieces {
