@@ -14,6 +14,10 @@ function timer() {
         tries += 1;
         setTimeout(timer2, 5000);
     }
+    if(typeof answer==="string"){
+        alert("please write omly in numbers")
+        setTimeout(timer,5000);
+    }
     function timer2() {
         var answer2 = parseInt(prompt("second try:How many figures of the Moti tree did you find?,Please enter the number,not in words. "));
         if (answer2 === 5) {
