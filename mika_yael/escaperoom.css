@@ -228,3 +228,40 @@ h4{
     color: white;
     cursor: pointer;
 }
+
+#talking1 {
+    font-family: Arial;
+    font-size: 20px;
+    color: black;
+    border: 1px solid black;
+    background-color: white;
+    width: 270px;
+    padding: 20px;
+    border-radius: 50px;
+    height: 130px;
+
+    position: fixed;
+    top: 30px;
+    left: 650px; /* Pinned to right side */
+}
+
+#talking2 {
+    font-family: Arial;
+    font-size: 50px;
+    color: black;
+    border: 1px solid black;
+    background-color: white;
+    width: 200px;
+    padding: 20px;
+    border-radius: 50px;
+    height: 120px;
+
+    position: fixed;
+    top: 30px;
+    left: 650px; /* Pinned to right side */
+}
+
+#img2-h{
+    width:300vh;
+    height:100vh;
+}

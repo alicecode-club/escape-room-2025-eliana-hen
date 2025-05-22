@@ -9,6 +9,35 @@
 </head>
 <body>
     <img id="img1-h" alt="hades1" src="https://static.wikitide.net/greatcharacterswiki/e/e0/Hades_Disney.png">
-    <div id="talking"></div>
+    <div id="talking1"></div>
+    <img id="img2-h" alt="hades2" src="https://i.ytimg.com/vi/T9N7O0DMaAU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB0gRgXDUYXGzS42wQQYdhe5Mkriw">
+    <div id="talking2"></div>
+
+    <script>
+        document.getElementById("img2-h").style.display = "none";
+        document.getElementById("img1-h").style.display = "block";
+        document.getElementById("talking1").style.display = "block";
+        document.getElementById("talking2").style.display = "none";
+
+
+        document.getElementById("talking1").innerHTML = "Hello you... Mortal. I just passed here, you know, thinking about how my brothers are up in the olympus while I'm there...";
+        let time = 4;
+
+        function countdown() {
+            if (time > 0) {
+                time--;
+                setTimeout(countdown, 1000);
+            } else {
+                document.getElementById("img1-h").style.display = "none";
+                document.getElementById("img2-h").style.display = "block";
+                document.getElementById("talking1").style.display = "none";
+                document.getElementById("talking2").style.display = "block";
+                document.getElementById("talking2").innerHTML = "IN HELL!!";
+
+            }
+        }
+        countdown();
+
+    </script>
 </body>
 </html>
