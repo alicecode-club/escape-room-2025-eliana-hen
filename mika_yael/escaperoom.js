@@ -12,7 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let i = 0; i < circles.length; i++) {
         circles[i].addEventListener("click", function () {
             this.style.display = "none";
-            score++
+            score++;
+            console.log(score);
         });
+    }
+    if (score == 3){
+        
     }
 });
