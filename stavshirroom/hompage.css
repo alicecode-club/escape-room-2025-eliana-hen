@@ -26,7 +26,12 @@ button{
     margin-right: 50vh 50vw;
     margin-left: 50vh 50vw;
     display: block;
+    box-shadow: 0 0 5px cyan,
+    0 0 25px cyan;
     
+}
+button:hover{
+    box-shadow: 0 0 5px cyan,0 0 25 px cyan,0 0 50px cyan,0 0 100px cyan,0 0 200px cyan;
 }
 .instructions{
     display: none;
