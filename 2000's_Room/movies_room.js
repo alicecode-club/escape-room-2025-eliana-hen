@@ -1,8 +1,11 @@
+// function alert - telling the user the theater is locked and that they need to solve riddles
 function Alert(){
-    alert("The cinema is locked! You will have to solve the riddle to open it! TO SEE THE RIDDLE SCROLL DOWN")
-    var div = document.getElementById("Iconic_Quotes")
-    div.removeAttribute("hidden");
+    alert("The cinema is locked! You will have to solve the riddle to open it! TO SEE THE RIDDLE SCROLL DOWN");
+    document.getElementById("Iconic_Quotes").style.display = "block";
 }
+
+
+// checking answers functions
     var i = 0
 function checkAnswer() {
     var i = 0
@@ -52,15 +55,21 @@ function checkAnswer() {
   }
   var select = document.getElementById("10thingsihateaboutyou");
     var answer = select.value;
-    var correct = "10 things I hate about you";
+    var correct = "10 Things I Hate About You";
+    console.log(answer)
     if (answer === correct) {
         i++
   }
+//   in case of a win - showing the puzzle and displaying everything else
   if (i===8){
     alert("You got " + i + " answers correct!");
-    alert("You Got It All Right! Let's Move On To The Next Riddle!")
-    // i need to add here the puzzle!!!!
-  }
+    alert("You Got It All Right! Let's Move On To The Next Riddle!");
+    document.getElementById("pazzle").style.display = "block";
+    document.getElementById("Iconic_Quotes").style.display = "none";
+    document.getElementById("lock").style.display = "none";
+    document.body.style.backgroundImage = "none";
+    document.body.style.backgroundColor = "lightblue";
+}
   else{
     alert("You got " + i + " answers correct!");
     alert("Well, You're Close! Try Again!" )

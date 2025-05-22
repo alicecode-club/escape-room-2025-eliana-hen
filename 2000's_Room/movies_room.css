@@ -40,7 +40,7 @@ body{
 }
 #firstriddletitle{
     font-family: "Coral Pixels", serif;
-    margin-left:300px;
+    margin-left:100px;
 }
 #checkanswersbutton{
     font-family: "Agbalumo", system-ui;
@@ -78,8 +78,8 @@ h2 {
 }
 
 button {
-    background-color: darkred;
-    color: white;
+    background-color: rgb(0, 97, 139);
+    color: rgb(23, 0, 44);
     font-size: 1.2rem;
     padding: 10px 20px;
     border: none;
