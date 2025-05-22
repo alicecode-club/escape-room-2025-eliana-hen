@@ -163,7 +163,7 @@ function dragEnd() {
 }
 
 function resetGame() {
-    location.reload();
+    locatioreload();
 }
 
 function checkWin() {
