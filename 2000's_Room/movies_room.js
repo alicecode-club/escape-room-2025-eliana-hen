@@ -162,9 +162,7 @@ function dragEnd() {
 
 }
 
-function resetGame() {
-    locatioreload();
-}
+
 
 function checkWin() {
     const boardTiles = document.querySelectorAll("#board img");
@@ -180,17 +178,19 @@ function checkWin() {
     if (correct) {
         if (correct) {
             setTimeout(() => {
-                let answer = prompt("מה שם הסרט?");
+                let answer = prompt("What Is The Name Of The Of The Movie In The Picture?");
                 if (answer && answer.toLowerCase() === "harry potter") {
-                    alert("כל הכבוד!");
-                } else {
-                    alert("טעות! נסי שוב.");
+                    alert("WOW! You solved the puzzle!");
+                    document.getElementById("imagesriddle").style.display = "block";
+                } 
+                else {
+                    alert("Incorrect! Try Again");
                 }
             }, 100);
         }
         
     } else {
-        alert("הפאזל עדיין לא פתור.");
+        alert("The Puzzle Isn't Solved Yet!");
     }
 }
 
