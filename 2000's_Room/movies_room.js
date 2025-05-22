@@ -182,7 +182,7 @@ function checkWin() {
             setTimeout(() => {
                 let answer = prompt("מה שם הסרט?");
                 if (answer && answer.toLowerCase() === "harry potter") {
-                    alert("כל הכבוד!");
+                    alert("Good Job! Now scroll down and continue to the next riddle!");
                 } else {
                     alert("טעות! נסי שוב.");
                 }
