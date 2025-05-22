@@ -1,182 +1,183 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="escaperoom.css">
-  <script defer src="js/escaperoom.js"></script>
-  <title>Puzzle</title>
-  <button id="button" type="button" onclick="nextPage3()">Next mission!</button>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="escaperoom.css">
+    <script defer src="js/escaperoom.js"></script>
+    <title>Puzzle</title>
 
-  <style>
-    body {
-      margin: 0;
-      background: #111;
-      overflow: hidden;
-      font-family: sans-serif;
+    <style>
+      body {
+        margin: 0;
+        background: #111;
+        overflow: hidden;
+        font-family: sans-serif;
+      }
+
+      #puzzle-container {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        margin: 40px auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 1px;
+        border: 3px solid #fff;
+        background: #222;
+      }
+
+      .slot {
+        width: 100px;
+        height: 100px;
+        border: 1px dashed #666;
+        box-sizing: border-box;
+        position: relative;
+      }
+
+      .piece {
+        width: 100px;
+        height: 100px;
+        background-size: 400px 400px;
+        position: absolute;
+        cursor: grab;
+        z-index: 100;
+        border: 1px solid #ccc;
+      }
+
+      .locked {
+        position: static !important;
+        cursor: default;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+  <button id="button3" type="button" onclick="nextPage3()">Next mission!</button>
+
+
+  <div id="puzzle-container"></div>
+
+  <script>
+  document.getElementById("button3").style.display = "none";
+
+  const imageSrc = "https://cdn.thestonestudio.in/wp-content/uploads/2020/09/Apollo-the-Greek-God-Sculpture-in-Marble.png";
+  const container = document.getElementById('puzzle-container');
+  const size = 4;
+  const pieceSize = 100;
+  const positions = [];
+
+  // Create the 4x4 grid slots
+  for (let row = 0; row < size; row++) {
+    for (let col = 0; col < size; col++) {
+      const slot = document.createElement('div');
+      slot.classList.add('slot');
+      slot.style.gridColumnStart = col + 1;
+      slot.style.gridRowStart = row + 1;
+      slot.dataset.correct = `${row}-${col}`;
+      container.appendChild(slot);
     }
-
-    #puzzle-container {
-      position: relative;
-      width: 400px;
-      height: 400px;
-      margin: 40px auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(4, 1fr);
-      gap: 1px;
-      border: 3px solid #fff;
-      background: #222;
-    }
-
-    .slot {
-      width: 100px;
-      height: 100px;
-      border: 1px dashed #666;
-      box-sizing: border-box;
-      position: relative;
-    }
-
-    .piece {
-      width: 100px;
-      height: 100px;
-      background-size: 400px 400px;
-      position: absolute;
-      cursor: grab;
-      z-index: 100;
-      border: 1px solid #ccc;
-    }
-
-    .locked {
-      position: static !important;
-      cursor: default;
-      z-index: 1;
-    }
-  </style>
-</head>
-<body>
-
-<div id="puzzle-container"></div>
-
-<script>
-document.getElementById("button").style.display = "none";
-
-const imageSrc = "https://cdn.thestonestudio.in/wp-content/uploads/2020/09/Apollo-the-Greek-God-Sculpture-in-Marble.png";
-const container = document.getElementById('puzzle-container');
-const size = 4;
-const pieceSize = 100;
-const positions = [];
-
-// Create the 4x4 grid slots
-for (let row = 0; row < size; row++) {
-  for (let col = 0; col < size; col++) {
-    const slot = document.createElement('div');
-    slot.classList.add('slot');
-    slot.style.gridColumnStart = col + 1;
-    slot.style.gridRowStart = row + 1;
-    slot.dataset.correct = `${row}-${col}`;
-    container.appendChild(slot);
   }
-}
 
-// Prepare correct positions
-for (let row = 0; row < size; row++) {
-  for (let col = 0; col < size; col++) {
-    positions.push({ row, col });
+  // Prepare correct positions
+  for (let row = 0; row < size; row++) {
+    for (let col = 0; col < size; col++) {
+      positions.push({ row, col });
+    }
   }
-}
 
-const shuffled = [...positions].sort(() => Math.random() - 0.5);
+  const shuffled = [...positions].sort(() => Math.random() - 0.5);
 
-shuffled.forEach((pos) => {
-  const piece = document.createElement('div');
-  piece.classList.add('piece');
-  piece.draggable = true;
-  piece.dataset.correct = `${pos.row}-${pos.col}`;
-  piece.style.backgroundImage = `url(${imageSrc})`;
-  piece.style.backgroundPosition = `-${pos.col * pieceSize}px -${pos.row * pieceSize}px`;
+  shuffled.forEach((pos) => {
+    const piece = document.createElement('div');
+    piece.classList.add('piece');
+    piece.draggable = true;
+    piece.dataset.correct = `${pos.row}-${pos.col}`;
+    piece.style.backgroundImage = `url(${imageSrc})`;
+    piece.style.backgroundPosition = `-${pos.col * pieceSize}px -${pos.row * pieceSize}px`;
 
-  // Start at random position
-  piece.style.left = `${Math.random() * (window.innerWidth - pieceSize)}px`;
-  piece.style.top = `${Math.random() * (window.innerHeight - pieceSize)}px`;
+    // Start at random position
+    piece.style.left = `${Math.random() * (window.innerWidth - pieceSize)}px`;
+    piece.style.top = `${Math.random() * (window.innerHeight - pieceSize)}px`;
 
-  document.body.appendChild(piece);
+    document.body.appendChild(piece);
 
-  let offsetX = 0, offsetY = 0;
+    let offsetX = 0, offsetY = 0;
 
-  piece.addEventListener("dragstart", (e) => {
-    offsetX = e.offsetX;
-    offsetY = e.offsetY;
+    piece.addEventListener("dragstart", (e) => {
+      offsetX = e.offsetX;
+      offsetY = e.offsetY;
+    });
+
+    piece.addEventListener("dragend", (e) => {
+      const x = e.clientX - offsetX;
+      const y = e.clientY - offsetY;
+
+      piece.style.left = x + "px";
+      piece.style.top = y + "px";
+
+      const slots = document.elementsFromPoint(e.clientX, e.clientY)
+        .filter(el => el.classList.contains("slot"));
+
+      if (slots.length) {
+        const slot = slots[0];
+        const rect = slot.getBoundingClientRect();
+        const correctPos = piece.dataset.correct;
+        const slotPos = slot.dataset.correct;
+
+        // Only allow if slot is empty and correct
+        if (!slot.querySelector('.piece') && correctPos === slotPos) {
+          // Move into slot and lock
+          piece.draggable = false;
+          piece.classList.add("locked");
+          piece.style.border = "2px solid green";
+
+          // Remove absolute position styles
+          piece.style.left = "";
+          piece.style.top = "";
+          piece.style.position = "static";
+
+          slot.appendChild(piece);
+
+          checkWin(); // ✅ <-- CHECK FOR VICTORY
+        } else {
+          piece.style.border = "2px solid red";
+        }
+      }
+    });
   });
 
-  piece.addEventListener("dragend", (e) => {
-    const x = e.clientX - offsetX;
-    const y = e.clientY - offsetY;
+  // ✅ Win-checking function
+  function checkWin() {
+    const allSlots = document.querySelectorAll('.slot');
+    let correctCount = 0;
 
-    piece.style.left = x + "px";
-    piece.style.top = y + "px";
+    allSlots.forEach(slot => {
+      const piece = slot.querySelector('.piece');
+      if (piece && piece.dataset.correct === slot.dataset.correct) {
+        correctCount++;
+      }
+    });
 
-    const slots = document.elementsFromPoint(e.clientX, e.clientY)
-      .filter(el => el.classList.contains("slot"));
+    if (correctCount === 16) {
+      let time = 1;
 
-    if (slots.length) {
-      const slot = slots[0];
-      const rect = slot.getBoundingClientRect();
-      const correctPos = piece.dataset.correct;
-      const slotPos = slot.dataset.correct;
+      function countdown() {
+      if (time > 0) {
+          time--;
+          setTimeout(countdown, 1000);
+      } else{
+          alert("🎉 You did it!");
+          document.getElementById("button3").style.display = "block";
 
-      // Only allow if slot is empty and correct
-      if (!slot.querySelector('.piece') && correctPos === slotPos) {
-        // Move into slot and lock
-        piece.draggable = false;
-        piece.classList.add("locked");
-        piece.style.border = "2px solid green";
-
-        // Remove absolute position styles
-        piece.style.left = "";
-        piece.style.top = "";
-        piece.style.position = "static";
-
-        slot.appendChild(piece);
-
-        checkWin(); // ✅ <-- CHECK FOR VICTORY
-      } else {
-        piece.style.border = "2px solid red";
       }
     }
-  });
-});
-
-// ✅ Win-checking function
-function checkWin() {
-  const allSlots = document.querySelectorAll('.slot');
-  let correctCount = 0;
-
-  allSlots.forEach(slot => {
-    const piece = slot.querySelector('.piece');
-    if (piece && piece.dataset.correct === slot.dataset.correct) {
-      correctCount++;
-    }
-  });
-
-  if (correctCount === 16) {
-    let time = 1;
-
-    function countdown() {
-    if (time > 0) {
-        time--;
-        setTimeout(countdown, 1000);
-    } else{
-        alert("🎉 You did it!");
-        document.getElementById("button").style.display = "block";
-
-    }
+    countdown();
   }
-  countdown();
-}
-}
+  }
 
-</script>
+  </script>
 
-</body>
-</html>
+  </body>
+  </html>
