@@ -30,14 +30,16 @@
         document.getElementById("img2-h").style.display = "none";
         document.getElementById("img3-h").style.display = "none";
         document.getElementById("img4-h").style.display = "none";
-        document.getElementsByClassName("lights").style.display = "none";
+        document.getElementById("light-z").style.display = "none";
+        document.getElementById("light-p").style.display = "none";
 
 
 
         document.getElementById("talking1").style.display = "block";
         document.getElementById("talking2").style.display = "none";
         document.getElementById("talking3").style.display = "none";
-        document.getElementsByClassName("argue").style.display = "none";
+        document.getElementById("p-talk").style.display = "none";
+        document.getElementById("z-talk").style.display = "none";
 
 
 
@@ -46,6 +48,7 @@
         let time = 5;
         let time2 = 2;
         let time3 = 1;
+        let time4 = 9;
 
 
 
@@ -90,18 +93,19 @@
         }
 
         function countdown4(){
-            if (time > 9){
-                time--;
+
+            if (time4 > 9) {
+                time4--;
                 setTimeout(countdown4, 1000);
-
-            }
-            else{
-                document.getElementsByClassName("argue").style.display = "block";
-                document.getElementsByClassName("lights").style.display = "block";
-
+            } else {
+                document.getElementById("p-talk").style.display = "block";
+                document.getElementById("light-p").style.display = "block";
+                document.getElementById("z-talk").style.display = "block";
+                document.getElementById("light-z").style.display = "block";
             }
         }
         countdown();
+        countdown4();
 
     </script>
 </body>
