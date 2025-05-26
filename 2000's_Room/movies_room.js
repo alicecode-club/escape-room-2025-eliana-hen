@@ -180,18 +180,13 @@ function checkWin() {
             setTimeout(() => {
                 let answer = prompt("What Is The Name Of The Of The Movie In The Picture?");
                 if (answer && answer.toLowerCase() === "harry potter") {
-<<<<<<< HEAD
                     alert("WOW! You solved the puzzle!");
                     document.getElementById("imagesriddle").style.display = "block";
                 } 
-                else {
+                else{
                     alert("Incorrect! Try Again");
-=======
                     alert("Good Job! Now scroll down and continue to the next riddle!");
-                } else {
-                    alert("טעות! נסי שוב.");
->>>>>>> 3b3728525258facbe0c6a2a51a4d16f5c2550ada
-                }
+                } 
             }, 100);
         }
         
