@@ -20,9 +20,9 @@
     <div id="talking3"></div>
 
 
-    <div id="light-z"></div>
+    <div id="light-z" class="lights"><img src="https://pngimg.com/d/lightning_PNG20.png" alt="lightning"></div>
     <div id="z-talk" class="argue"></div>
-    <div id="light-p"></div>
+    <div id="light-p" class="lights"><img src="https://static.vecteezy.com/system/resources/thumbnails/013/453/251/small_2x/light-rays-shine-flash-sun-star-effect-free-png.png" alt="blueLight"></div>
     <div id="p-talk" class="argue"></div>
 
     <script>
@@ -30,10 +30,15 @@
         document.getElementById("img2-h").style.display = "none";
         document.getElementById("img3-h").style.display = "none";
         document.getElementById("img4-h").style.display = "none";
+        document.getElementsByClassName("lights").style.display = "none";
+
+
 
         document.getElementById("talking1").style.display = "block";
         document.getElementById("talking2").style.display = "none";
         document.getElementById("talking3").style.display = "none";
+        document.getElementsByClassName("argue").style.display = "none";
+
 
 
 
@@ -81,6 +86,19 @@
                 document.getElementById("img4-h").style.display = "block";
                 document.getElementById("talking3").style.display = "block";
                 document.getElementById("talking3").innerHTML = "Anyway... I heard you're stuck here for a while-";
+            }
+        }
+
+        function countdown4(){
+            if (time > 9){
+                time--;
+                setTimeout(countdown4, 1000);
+
+            }
+            else{
+                document.getElementsByClassName("argue").style.display = "block";
+                document.getElementsByClassName("lights").style.display = "block";
+
             }
         }
         countdown();
