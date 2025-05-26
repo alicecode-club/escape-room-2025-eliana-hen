@@ -48,7 +48,7 @@
         let time = 5;
         let time2 = 2;
         let time3 = 1;
-        let time4 = 9;
+        let time4 = 1;
 
 
 
@@ -80,32 +80,38 @@
         }
 
         function countdown3() {
+            console.log("countdown3 called, time3:", time3);
 
             if (time3 > 0) {
                 time3--;
                 setTimeout(countdown3, 1000);
             } else {
+                console.log("countdown3 finished, showing img4 and calling countdown4");
+
                 document.getElementById("img3-h").style.display = "none";
                 document.getElementById("img4-h").style.display = "block";
                 document.getElementById("talking3").style.display = "block";
                 document.getElementById("talking3").innerHTML = "Anyway... I heard you're stuck here for a while-";
+
+                countdown4(); // This MUST run!
             }
         }
 
-        function countdown4(){
+        function countdown4() {
+            console.log("countdown4 triggered"); // If this doesn’t show, it never got called!
 
-            if (time4 > 9) {
-                time4--;
-                setTimeout(countdown4, 1000);
-            } else {
-                document.getElementById("p-talk").style.display = "block";
-                document.getElementById("light-p").style.display = "block";
-                document.getElementById("z-talk").style.display = "block";
-                document.getElementById("light-z").style.display = "block";
-            }
+            document.getElementById("p-talk").style.display = "block";
+            document.getElementById("light-p").style.display = "block";
+            document.getElementById("z-talk").style.display = "block";
+            document.getElementById("light-z").style.display = "block";
+
+            document.getElementById("p-talk").innerHTML = "Poseidon: Enough, Hades!";
+            document.getElementById("z-talk").innerHTML = "Zeus: Calm yourself, brother!";
         }
+
+
+
         countdown();
-        countdown4();
 
     </script>
 </body>
