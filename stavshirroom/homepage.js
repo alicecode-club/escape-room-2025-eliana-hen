@@ -5,20 +5,23 @@ function start() {
 }
 function timer() {
     var answer = parseInt(prompt("How many figures of the Moti tree did you find?🌳 Please enter the number, not in words. "));//  מספר הודעה קופצת קלט
-    var userinput=parseInt(answer);
-    if(isNaN(answer)){//בדיקה האם נכתב מספר?
-        alert("please write only in numbers❗")
-        setTimeout(timer,5000);
-    }
+    var userinput=parseInt(answer);//  מספר הודעה קופצת קלט
     if (answer === 5) {
         alert("🎉Well done! Now you can continue solving the riddles.");//הודעת הצלחה
+        setTimeout(open_popup,5000);
     }
-    //להוסיף הודעה מתאימה כשהמשתמש כתב באותיות במקום במספרים
     else {
-        alert("❌You didn't succeed, it's okay🙃. You have 2 more minutes to find all of Moti's pictures and then you can continue solving the riddels.");//הודעה לנסיון שני
-        tries += 1;
-        setTimeout(timer2, 5000);
+        if(isNaN(answer)){//בדיקה האם נכתב מספר?
+            alert("please write only in numbers❗")
+            setTimeout(timer,1000);  
+        }  
+        else {
+            alert("❌You didn't succeed, it's okay🙃. You have 2 more minutes to find all of Moti's pictures and then you can continue solving the riddels.");//הודעה לנסיון שני
+            tries += 1;
+            setTimeout(timer2, 5000);
+        }
     }
+}
     function timer2() {
         var answer2 = parseInt(prompt("second try🙃:How many figures of the Moti tree did you find?🌳,Please enter the number,not in words. "));
         var userinput2=parseInt(answer2);
@@ -28,16 +31,16 @@ function timer() {
         }
         if (answer2 === 5) {
             alert("🎉Well done! Now you can continue solving the riddles.");
+            setTimeout(open_popup,5000);
         }
         else {
             tries += 1
         }
         if (tries == 2) {
             alert("❌you dont have any tries,but dont worry read the instructions and keep going,enjoy");
+            setTimeout(open_popup,5000);
         }
     }
-    setTimeout(open_popup,5000);
-}
 function trees(speechBubbleId){
         var bubble = document.getElementById(speechBubbleId);
         bubble.style.display = "block";
