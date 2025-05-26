@@ -196,5 +196,18 @@ function checkWin() {
 }
 
 
+ function moveRandom() {
+    const item = document.querySelectorAll('items');
+    const maxX = window.innerWidth - 50;
+    const maxY = window.innerHeight - 50;
+
+    const randomX = Math.floor(Math.random() * maxX);
+    const randomY = Math.floor(Math.random() * maxY);
+
+    item.style.left = `${randomX}px`;
+    item.style.top = `${randomY}px`;
+  }
+
+  setInterval(moveRandom, 1000);
 
 
