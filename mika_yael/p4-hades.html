@@ -86,14 +86,14 @@
                 time3--;
                 setTimeout(countdown3, 1000);
             } else {
-                console.log("countdown3 finished, showing img4 and calling countdown4");
+                console.log("countdown3 finished, showing img3-h and talking3");
 
                 document.getElementById("img3-h").style.display = "none";
                 document.getElementById("img4-h").style.display = "block";
                 document.getElementById("talking3").style.display = "block";
                 document.getElementById("talking3").innerHTML = "Anyway... I heard you're stuck here for a while-";
 
-                countdown4(); // This MUST run!
+                countdown4(); // Move forward
             }
         }
 
@@ -103,19 +103,20 @@
             if (time4 > 0) {
                 time4--;
                 setTimeout(countdown4, 1000);
-            } else{
-                console.log("countdown4 triggered"); // If this doesn’t show, it never got called!
+            } else {
+                console.log("countdown4 triggered");
 
+                // Don't hide img3-h
                 document.getElementById("p-talk").style.display = "block";
-                document.getElementById("light-p").style.display = "none";
                 document.getElementById("z-talk").style.display = "block";
+                document.getElementById("light-p").style.display = "block";
                 document.getElementById("light-z").style.display = "block";
 
                 document.getElementById("p-talk").innerHTML = "Poseidon: Enough, Hades!";
                 document.getElementById("z-talk").innerHTML = "Zeus: Calm yourself, brother!";
-
             }
         }
+
 
 
 
