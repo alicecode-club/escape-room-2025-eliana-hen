@@ -334,18 +334,19 @@ h4{
 
 #light-p, #light-z {
     position: absolute;
-    width: 100px;
-    height: auto;
+    width: 700px;
+    height: 600px;
     z-index: 5;
     opacity: 0.8;
 }
 
 #light-p {
-    top: 50px;
-    left: 10px;
+    top: -200px;
+    left: -200px;
+    rotate: 200deg;
 }
 
 #light-z {
-    top: 50px;
-    right: 10px;
+    top:-170px;
+    right: -200px;
 }
