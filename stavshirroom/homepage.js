@@ -9,6 +9,7 @@ function timer() {
     if (answer === 5) {
         alert("🎉Well done! Now you can continue solving the riddles.");//הודעת הצלחה
         setTimeout(open_popup,5000);
+        bubble.style.display = "none";
     }
     else {
         if(isNaN(answer)){//בדיקה האם נכתב מספר?
@@ -32,13 +33,15 @@ function timer() {
         if (answer2 === 5) {
             alert("🎉Well done! Now you can continue solving the riddles.");
             setTimeout(open_popup,5000);
+            bubble.style.display = "none";
         }
         else {
             tries += 1
         }
         if (tries == 2) {
-            alert("❌you dont have any tries,but dont worry read the instructions and keep going,enjoy");
+            alert("❌you dont have any tries,but don't worry read the instructions and keep going,enjoy");
             setTimeout(open_popup,5000);
+            bubble.style.display = "none";
         }
     }
 function trees(speechBubbleId){
