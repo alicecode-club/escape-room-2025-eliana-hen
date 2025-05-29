@@ -28,7 +28,8 @@
     font-size: 30px;
     text-align: center;
   }
-  #name1{
+  #name1,#name2,#name3,#name4{
     display:flex;
     justify-content:space-around;
+    margin-right: 20px;
   }
