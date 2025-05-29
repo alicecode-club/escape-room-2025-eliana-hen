@@ -20,9 +20,9 @@
     <div id="talking3"></div>
 
 
-    <div id="light-z" class="lights"><img src="https://pngimg.com/d/lightning_PNG20.png" alt="lightning"></div>
+    <img id="light-z" src="https://pngimg.com/d/lightning_PNG20.png" alt="lightning">
     <div id="z-talk" class="argue"></div>
-    <div id="light-p" class="lights"><img src="https://static.vecteezy.com/system/resources/thumbnails/013/453/251/small_2x/light-rays-shine-flash-sun-star-effect-free-png.png" alt="blueLight"></div>
+    <img id="light-p" src="https://static.vecteezy.com/system/resources/thumbnails/013/453/251/small_2x/light-rays-shine-flash-sun-star-effect-free-png.png" alt="blueLight">
     <div id="p-talk" class="argue"></div>
 
     <script>
@@ -98,15 +98,23 @@
         }
 
         function countdown4() {
-            console.log("countdown4 triggered"); // If this doesn’t show, it never got called!
+            console.log("countdown4 called, time4:", time4);
 
-            document.getElementById("p-talk").style.display = "block";
-            document.getElementById("light-p").style.display = "block";
-            document.getElementById("z-talk").style.display = "block";
-            document.getElementById("light-z").style.display = "block";
+            if (time4 > 0) {
+                time4--;
+                setTimeout(countdown4, 1000);
+            } else{
+                console.log("countdown4 triggered"); // If this doesn’t show, it never got called!
 
-            document.getElementById("p-talk").innerHTML = "Poseidon: Enough, Hades!";
-            document.getElementById("z-talk").innerHTML = "Zeus: Calm yourself, brother!";
+                document.getElementById("p-talk").style.display = "block";
+                document.getElementById("light-p").style.display = "none";
+                document.getElementById("z-talk").style.display = "block";
+                document.getElementById("light-z").style.display = "block";
+
+                document.getElementById("p-talk").innerHTML = "Poseidon: Enough, Hades!";
+                document.getElementById("z-talk").innerHTML = "Zeus: Calm yourself, brother!";
+
+            }
         }
 
 
