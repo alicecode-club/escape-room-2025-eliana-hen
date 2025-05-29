@@ -197,19 +197,22 @@ function checkWin() {
 
 
  function moveRandom() {
+    const container = document.getElementById("imagesriddle");
     const items = document.querySelectorAll('.items');
+    const minX = 0;
+    const maxX = 1200;
+    const minY = 810;
+    const maxY = 1100;
 
     items.forEach(item => {
-      const maxX = window.innerWidth - item.offsetWidth;
-      const maxY = window.innerHeight - item.offsetHeight;
+        const randomX = Math.floor(Math.random() * (maxX - minX)) + minX;
+        const randomY = Math.floor(Math.random() * (maxY - minY)) + minY;
 
-      const randomX = Math.floor(Math.random() * maxX);
-      const randomY = Math.floor(Math.random() * maxY);
-
-      item.style.left = `${randomX}px`;
-      item.style.top = `${randomY}px`;
+        item.style.left = `${randomX}px`;
+    item.style.top = `${randomY}px`;
     });
   }
+
 
 function showItems() {
   document.getElementById("imagesriddle").style.display = "block";
