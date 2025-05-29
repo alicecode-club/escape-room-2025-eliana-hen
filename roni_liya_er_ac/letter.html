@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="escaperoomlr.css">
+  <title>הזמנה</title>
+</head>
+
+<body>
+
+  <button class="open-btn" onclick="openPopup()"> פתח מכתב מסתורי</button>
+
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup">
+      <span class="close-btn" onclick="closePopup()">×</span>
+      הוד מעלתך,<br><br>
+      הנך מוזמן/ת לנשף הסודי אשר ייערך בארמון עם צלצול הפעמון בחצות.
+      אך רק מי שידע את התשובה לחידה הבאה יוכל לעבור את שערי הארמון:<br>
+
+      <div class="riddle">
+        <strong>חידת הכניסה:</strong><br>
+        אינני חי אך אני צומח,<br>
+        אין לי ריאות אך אני נושם,<br>
+        אין לי פה אך אני מדבר. <br>
+        מה אני?
+      </div>
+
+      <input type="text" id="answerInput" placeholder="הקלד/י את תשובתך כאן...">
+      <button class="submit-btn" onclick="checkAnswer()">שלח</button>
+
+      <div class="message" id="message"></div>
+    </div>
+  </div>
+
+  <script src="escaperoomlr.js"></script>
+
+</body>
+</html>

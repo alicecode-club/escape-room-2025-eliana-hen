@@ -14,10 +14,10 @@
 
       // התשובה הנכונה: "הד"
       if (input === "הד") {
-        message.style.color = "#2e5c2c";
-        message.textContent = "תשובה נכונה! השערים ייפתחו לפניך... 🎻";
+        message.style.color = "green";
+        message.textContent = "ענית נכונה! השערים ייפתחו לפניך...";
       } else {
-        message.style.color = "#a00";
+        message.style.color = "red";
         message.textContent = "תשובה שגויה... נסה/י שוב.";
       }
     }
