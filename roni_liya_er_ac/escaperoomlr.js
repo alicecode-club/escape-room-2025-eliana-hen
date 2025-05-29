@@ -13,7 +13,7 @@
       const message = document.getElementById("message");
 
       // התשובה הנכונה: "הד"
-      if (input === "הד") {
+      if (input == "יהלום") {
         message.style.color = "green";
         message.textContent = "ענית נכונה! השערים ייפתחו לפניך...";
       } else {

@@ -1,6 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yoav+Hebrew+Cursive&display=swap');
+
 body {
     direction: rtl;
     font-family: Arial, sans-serif;
+}
+
+p {
+    body {
+        font-family: 'Yoav Hebrew Cursive', sans-serif;
+    }
+}
+
+#diamond {
+    display: none;
+    
 }
 
 .container {
@@ -53,7 +67,6 @@ body {
     bottom: 125%;
     left: 50%;
     margin-left: -80px; }
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
 #backeground img {
     width: 100%; /* התמונה תמלא את המיכל */
