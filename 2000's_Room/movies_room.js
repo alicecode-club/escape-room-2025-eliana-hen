@@ -207,7 +207,10 @@ function checkWin() {
     item.style.left = `${randomX}px`;
     item.style.top = `${randomY}px`;
   }
-
+window.onload = () => {
+  moveRandom();
+  setInterval(moveRandom, 1000);
+};
   setInterval(moveRandom, 1000);
 
 
