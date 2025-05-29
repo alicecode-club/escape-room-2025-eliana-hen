@@ -181,7 +181,7 @@ function checkWin() {
                 let answer = prompt("What Is The Name Of The Of The Movie In The Picture?");
                 if (answer && answer.toLowerCase() === "harry potter") {
                     alert("WOW! You solved the puzzle!");
-                    document.getElementById("imagesriddle").style.display = "block";
+                    showItems()
                 } 
                 else{
                     alert("Incorrect! Try Again");
@@ -197,20 +197,24 @@ function checkWin() {
 
 
  function moveRandom() {
-    const item = document.querySelectorAll('items');
-    const maxX = window.innerWidth - 50;
-    const maxY = window.innerHeight - 50;
+    const items = document.querySelectorAll('.items');
 
-    const randomX = Math.floor(Math.random() * maxX);
-    const randomY = Math.floor(Math.random() * maxY);
+    items.forEach(item => {
+      const maxX = window.innerWidth - item.offsetWidth;
+      const maxY = window.innerHeight - item.offsetHeight;
 
-    item.style.left = `${randomX}px`;
-    item.style.top = `${randomY}px`;
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+
+      item.style.left = `${randomX}px`;
+      item.style.top = `${randomY}px`;
+    });
   }
-window.onload = () => {
-  moveRandom();
-  setInterval(moveRandom, 1000);
-};
-  setInterval(moveRandom, 1000);
+
+function showItems() {
+  document.getElementById("imagesriddle").style.display = "block";
+  moveRandom(); 
+  setInterval(moveRandom, 1000);                   // start moving once visible
+}
 
 
