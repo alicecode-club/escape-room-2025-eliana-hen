@@ -306,7 +306,7 @@ h4{
 
 
 #img2-h, #img3-h, #img4-h, #talking2, #talking3,
-#light-z, #light-p, #z-talk, #p-talk {
+#light-z, #light-p, #z-talk, #p-talk, #img5-h {
     display: none;
 }
 
@@ -349,4 +349,32 @@ h4{
 #light-z {
     top:-170px;
     right: -200px;
+}
+
+#talking4 {
+    font-family: Arial;
+    font-size: 20px;
+    color: black;
+    border: 1px solid black;
+    background-color: white;
+    width: 300px;
+    padding: 20px;
+    border-radius: 50px;
+    height: 180px;
+
+    position: fixed;
+    top: 30px;
+    left: 300px; /* Pinned to right side */
+}
+
+#img5-h {
+    display: flex;
+    justify-content: center;   /* center horizontally */
+    align-items: center;       /* center vertically */
+    
+    position: relative;        /* ← Add this line */
+    left: 500px;              /* ← Now this will work */
+
+    height: 100vh;
+    width: 60vh;
 }
