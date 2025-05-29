@@ -201,8 +201,8 @@ function checkWin() {
     const items = document.querySelectorAll('.items');
     const minX = 0;
     const maxX = 1200;
-    const minY = 810;
-    const maxY = 1100;
+    const minY = 1100;
+    const maxY = 1300;
 
     items.forEach(item => {
         const randomX = Math.floor(Math.random() * (maxX - minX)) + minX;
@@ -221,3 +221,11 @@ function showItems() {
 }
 
 
+function puzzlepage(){
+    document.getElementById("pazzle").style.display = "block";
+    document.getElementById("Iconic_Quotes").style.display = "none";
+    document.getElementById("lock").style.display = "none";
+    document.body.style.backgroundImage = "none";
+    document.body.style.backgroundColor = "lightblue";
+    showItems()
+}
