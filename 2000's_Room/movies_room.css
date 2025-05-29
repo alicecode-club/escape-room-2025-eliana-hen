@@ -176,3 +176,7 @@ button:hover {
     justify-content:center;
 }
 
+.items {
+  position: absolute;
+  transition: all 0.5s ease; /* optional for smooth movement */
+}
