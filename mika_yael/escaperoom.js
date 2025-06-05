@@ -23,5 +23,6 @@ function nextPage5(){
     `;
     document.body.appendChild(b);
     requestAnimationFrame(b.style.opacity = 1);
+    window.open("p5.2 - hermes.html", "_self");
 
 }
