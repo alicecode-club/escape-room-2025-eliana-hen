@@ -30,6 +30,8 @@
     <button id="button5" onclick="nextPage5()">press the button</button>
 
     <script>
+        document.getElementById("button5").style.display = "none";
+
         document.getElementById("img1-h").style.display = "block";
         document.getElementById("img2-h").style.display = "none";
         document.getElementById("img3-h").style.display = "none";
@@ -147,7 +149,9 @@
                 document.getElementById("img5-h").style.display = "block";
 
                 document.getElementById("talking4").style.display = "block";
-                document.getElementById("talking4").innerHTML = "Oh, you are wondering what happend between my 2 dear brothers? Well... I guess you've read at least the first book of the 'Percy Jackson' series so, you should know what Zeus is missing..."
+                document.getElementById("talking4").innerHTML = "Oh, you are wondering what happend between my 2 dear brothers? Well... I guess you've read at least the first book of the 'Percy Jackson' series so, you should know what Zeus is missing...";
+
+                document.getElementById("button5").style.display = "block";
 
             }
         }

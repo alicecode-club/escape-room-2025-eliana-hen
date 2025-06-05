@@ -378,3 +378,45 @@ h4{
     height: 100vh;
     width: 60vh;
 }
+
+#button5 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers exactly */
+    
+    padding: 7px;
+    font-family: "Rye", serif;
+    font-size: 20px;
+    border-style: inset;
+    border-radius: 10px;
+    border-width: 10px;
+    background-color: rgb(29, 29, 29);
+    color: white;
+    cursor: pointer;
+}
+
+
+
+#button5:hover{
+    padding: 7px;
+    font-family: "Rye" , serif;
+    font-size:20px;
+    border-style: inset;
+    border-radius: 10px;
+    border-color: darkgrey;
+    border-width: 10px;
+    background-color:white;
+    color:black;
+}
+
+#button5:active{
+    padding: 7px;
+    font-family: "Rye" , serif;
+    font-size:20px;
+    border-style: outset;
+    border-radius: 10px;
+    border-color: darkgrey;
+    border-width: 10px;
+    background-color:white;
+} 

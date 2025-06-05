@@ -15,7 +15,7 @@
 
         }
 
-        .letters-container {
+        .popup {
             position: fixed;
             bottom: 20px;                /* 20px from the bottom */
             left: 50%;
@@ -34,12 +34,24 @@
         }
 
     </style>
-    <div class = "letters-container">
+    <div id="letter" class="popup">
         <img id="l1" class="letters" alt="letter1"  src="https://png.pngtree.com/png-vector/20230923/ourmid/pngtree-letter-post-packet-mail-png-image_10137838.png">
         <img id="l2" class="letters" alt="letter2"  src="https://png.pngtree.com/png-vector/20230923/ourmid/pngtree-letter-post-packet-mail-png-image_10137838.png">
         <img id="l3" class="letters" alt="letter3"  src="https://png.pngtree.com/png-vector/20230923/ourmid/pngtree-letter-post-packet-mail-png-image_10137838.png">
-
+    <span class="close" onclick="close_popup(letter)">X</span>
     </div>
+
+    <script>
+        function open_popup(id) {
+            var popup = document.getElementById(id);
+            popup.style.display = "block";
+        }
+        function close_popup(id) {
+            var popup = document.getElementById(id);;
+            popup.style.display = "none";
+        }
+    </script>
+    
 
     
 </body>
