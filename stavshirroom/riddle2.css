@@ -1,0 +1,35 @@
+
+ body{
+    background-color: burlywood;
+ }
+#title{
+    font-family: 'Baloo Tammudu 2';
+    color:RoyalBlue ;
+    size:30px;
+  }
+  img{
+    width:200px;
+    flex-direction:column;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    grid-gap: 10px;
+    column-gap: 15px;
+    column-rule: 4px double #ff00ff;
+  }
+  
+  .container > div {
+    background-color: #C0C0C0;
+    background-color: #f1f1f1;
+    border: 1px solid black;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+  #name1,#name2,#name3,#name4{
+    display:flex;
+    justify-content:space-around;
+    margin-right: 20px;
+  }

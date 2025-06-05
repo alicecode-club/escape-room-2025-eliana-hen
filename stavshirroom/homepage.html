@@ -17,11 +17,17 @@
     <center>
     <button type="button" id="start-button" onclick="start()" > start </button>
     <div id="popup_instructions" class="instructions">
-        <--!write something-->
+        <p>Instructions:<br><br>Hi there happy that you came.welcome to the future now we can tell you when our story begins.<br>
+        The year is 2100, one day Noa went to her garden and suddenly the tree Moti started talking🙀🌳🌲 She said “Who is this ????” It’s the tree “Moti!” Oh okay? Noa said. What do you need Moti? Noa asked and he told her that all the trees would die soon if she didn’t help him immediately.
+         Noa said “This is terrible” But now Moti the Tree tells Noa the evil plan, a huge corporation plans to eliminate Moti the Tree and take over all the trees in all the houses! They will send robots to destroy Moti the Tree and Noa's garden where the tree is kept - and if you don't stop them and solve all the questions, 
+         Moti the Tree will become extinct and the other trees will lose their last chance to recover!<br>
+         Solve the puzzles as quickly as possible and help Noah,Moti and all the other trees in the world!<br>
+         At first you will watch a short animation and then you can solve the riddles, good luck!</p>
         <span class="close"
-            onclick="close_popup(popup_instructions)">X</span></div>
+            onclick="close_popup('popup_instructions')">X</span></div>
 </center>
-<img src="tree.png" id="tree">
+<div id="speech-bubble">you<br> found<br> me🥳🎉</div>
+<img src="tree.png" id="tree" onclick="trees('speech-bubble')">
 <img src="tree2.png" id="tree2">
 </body>
 </html>

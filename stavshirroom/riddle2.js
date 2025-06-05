@@ -1,0 +1,28 @@
+var score=0;
+alert("Hi welcome to the next riddle!,here you have to click on the pictures Use the clues and the picture to choose the correct name of the tree, good luck! 🌳")
+function image1(){
+  alert("Your clues are:🔍\nmy fruit wears a little hat and falls to the ground in autumn and start with the letter a 🍂🔤\n 🚢 long ago,I helped build boats and ships and i am very old\n🛡️⚡️ In ancient myths, i was sacred to Zeus and Thor\n🏅my leaves decorate military ranks and academic honors in several countries");
+  var answer1=document.getElementById("name1").value;//לקיחת תשובה מהמשתמש
+  if(answer1==oak){//בדיקת תשובה 1
+    score+=1;
+  }
+}
+function image2(){
+ alert("your clues are:🔍\nYou won't find me in Israel, I need rain, heat, and humidity all year round 🌦️\nI start with a C, I end with an O, and in the middle... another C 🔤\nI am the origin of a sweet thing that people of all ages love ☕️\nInside I have purple or brown seeds 🌰");
+ var answer2=document.getElementById("name2").value;//לקיחת תשובה מהמשתמש
+ if(answer2==Cocoa){//בדיקת תשובה 2
+    score+=1;
+
+ }
+}
+ function image3(){
+    alert("your clues  are:🔍\nMy leaf is on a country’s flag 🍁 that starts with c\nPeople tap my trunk to get something delicious 🥞\nIn fall, my leaves turn red, yellow, and gold\nGuess who I am, and go forth!");
+    var answer3=document.getElementById("name3").value;//לקיחת תשובה מהמשתמש
+    if(answer3==Mapletree)//בדיקת תשובה 3{
+        score+=1;
+    }
+    function image4(){
+        alert("your clues  are:🔍\nI carry a brown fruit with water inside\nMy leaves are long, I love the sun🌴☀️\nI live where the sea and land meet🌊🏕️");
+    }
+
+
