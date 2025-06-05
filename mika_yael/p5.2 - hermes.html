@@ -22,7 +22,6 @@
             transform: translateX(-50%); /* center horizontally */
             display: flex;
             gap: 290px;                   /* 20px space between letters */
-            z-index: 10;                 /* stay above background */
         }
 
         .letters {
@@ -38,8 +37,23 @@
             height: 1000px;
             width: 900px;
             position: relative;
-            z-index: 9998;
+            z-index: 3;
         }
+
+        .texts {
+            height: 1000px;
+            width: 900px;
+
+            color: black;
+            margin:0 auto;
+            position: relative;
+
+            font-family: 'Times New Roman', Times, serif;
+            z-index: 4;
+        }
+
+        
+
 
 
     </style>
@@ -68,39 +82,31 @@
     document.getElementById("t2").style.display = "none";
     document.getElementById("t3").style.display = "none";
 
-  function open_popup(id) {
-    document.body.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+    function open_popup(id) {
+    document.body.style.backgroundColor = "rgba(0, 0, 0, 0.1)";
 
-    const popup = document.getElementById(id);
-    
-    if (id == "l1"){
+    // Hide all messages first
+    ["m1", "m2", "m3"].forEach(id => document.getElementById(id).style.display = "none");
+    ["t1", "t2", "t3"].forEach(id => document.getElementById(id).style.display = "none");
+
+    // Show the one associated with the letter clicked
+    if (id === "l1") {
         document.getElementById("m1").style.display = "block";
         document.getElementById("t1").style.display = "block";
-    }
-
-    else if (id == "l2"){
+    } else if (id === "l2") {
         document.getElementById("m2").style.display = "block";
         document.getElementById("t2").style.display = "block";
-    }
-
-    else if (id == "l3"){
+    } else if (id === "l3") {
         document.getElementById("m3").style.display = "block";
         document.getElementById("t3").style.display = "block";
     }
+}
 
-    popup.style.display = "block"; // show popup
-  }
 
   function close_popup(id) {
     const popup = document.getElementById(id);
     popup.style.display = "none"; // hide popup
   }
-
-  // Open popup on page load (for testing)
-  window.onclick = () => open_popup('l1');
-  window.onclick = () => open_popup('l2');
-  window.onclick = () => open_popup('l3');
-
 
 </script>
 
