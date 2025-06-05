@@ -1,20 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Coral+Pixels&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
 body{
-    background-image: url(https://i.pinimg.com/736x/19/26/96/1926962aa59a37472811089bf5201409.jpg);
+    background-image: url(https://i.pinimg.com/736x/7f/79/6c/7f796c2430eb6f3509ec803f1d28355b.jpg);
     background-size:100vw 100vh;
 }
+
 
 #lock{
     background: none;
     border: none;
     margin-top: 280px;
-    margin-left:510px;
+    margin-left:524px;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    background: none;
+    padding: 0;
+    }
+
+#lock:focus {
+  outline: none;
 }
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 
 #Iconic_Quotes{
     background-color: plum;
-    height:520px;
-    margin-left:20px;
+    width:100vw;
+    display:flex;
 }
 
 .quotespics{
@@ -33,11 +52,130 @@ body{
     display:flex;
     justify-content:space-around;
 }
+#secondrow{
+    display:flex;
+    justify-content:space-around;
+    flex-direction:row;
+}
 #secondrowchoosing{
     display:flex;
     justify-content:space-around;
 }
 #firstriddletitle{
     font-family: "Coral Pixels", serif;
-    margin-left:250px;
+    text-align:center;
+}
+#checkanswersbutton{
+    font-family: "Agbalumo", system-ui;
+    background-color:#FAE6E7;
+    padding: 25px ;
+    border:0;
+    border-radius:70px;
+    box-shadow: 0 8px 16px 0 #CF78A7;
+    font-size:15px;
+    margin-bottom:20px;
+}
+
+
+#pazzle{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    background-image: url("images/קולנוע.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding-bottom: 50px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px black;
+}
+
+h2 {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 3px black;
+}
+
+button {
+    background-color: rgb(0, 97, 139);
+    color: rgb(23, 0, 44);
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px black;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: rgb(20, 157, 220);
+}
+
+#pieces {
+    width: 800px;
+    height: 180px;
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    gap: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+    overflow-y: auto;
+}
+
+#pieces img {
+    width: 80px;
+    height: 80px;
+    cursor: grab;
+    border: 1px solid lightblue;
+}
+
+#board {
+    width: 400px;
+    height: 400px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 1px;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 0px 15px black;
+}
+
+#board img {
+    width: 80px;
+    height: 80px;
+    
+}
+
+
+#imagesriddle{
+    background-color: rgb(153, 208, 239);
+    width:100vw;
+    display:flex;
+}
+
+#titlefourthriddle{
+    font-family: "Coral Pixels", serif;
+    font-size:50px;
+    justify-content:center;
+    text-align: center;
+
+}
+
+#buttondiv{
+    display:flex;
+    justify-content:center;
+}
+
+.items {
+  position: absolute;
+  transition: all 0.5s ease; /* optional for smooth movement */
 }
