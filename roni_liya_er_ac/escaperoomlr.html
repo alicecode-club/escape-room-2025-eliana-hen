@@ -7,26 +7,25 @@
     <title>ESCAPEROOMLRAC</title>
 </head>
 <body>
+    <button class="open-btn" onclick="openPopup()">letter</button>
     
     <button class="open-btn" onclick="openPopup()"></button>
 
   <div class="popup-overlay" id="popupOverlay">
     <div class="popup">
-      <span class="close-btn" onclick="closePopup()">×</span>
+      <span class="close-btn" onclick="closePopup()">×</span><p>
       הוד מעלתך,<br><br>
       הנך מוזמן/ת לנשף הסודי אשר ייערך בארמון עם צלצול הפעמון בחצות.
       אך רק מי שידע את התשובה לחידה הבאה יוכל לעבור את שערי הארמון:<br>
-
+      </p>
       <div class="riddle">
-        <strong>חידת הכניסה:</strong><br>
-        אינני חי אך אני צומח,<br>
-        אין לי ריאות אך אני נושם,<br>
-        אין לי פה אך אני מדבר. <br>
-        מה אני?
+        <p>אבן אני, אך חותך מתכת. נופל – אך לא נשבר. מי אני?</p>
       </div>
 
       <input type="text" id="answerInput" placeholder="חתום/י את תשובתך כאן...">
       <button class="submit-btn" onclick="checkAnswer()">שלח</button>
+
+      <img id="diamond" src="https://www.berzon-ins.co.il/wp-content/uploads/2018/08/%D7%9E%D7%A6%D7%A2%D7%93-%D7%A2%D7%A9%D7%A8%D7%AA-%D7%94%D7%99%D7%94%D7%9C%D7%95%D7%9E%D7%99%D7%9D.png" alt="">
 
       <div class="message" id="message"></div>
     </div>
