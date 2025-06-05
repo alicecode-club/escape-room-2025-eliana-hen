@@ -1,6 +1,6 @@
 var tries = 0;
 function start() {
-    alert("  Warm-up activity: Before you begin, our main character in the story is the tree Moti. You will soon understand why. But before that, in order to continue in the room, you will need to find as many hidden pictures as possible on the screen of the tree Moti. Only if you find them all can you continue on your way and receive the rest of the instructions. You have two minutes on the clock. Good luck :)♡");
+    alert("  Warm-up activity: Before you begin, our main character in the story is the tree Moti. You will soon understand why. But before that, in order to continue in the room, you will need to find as many hidden pictures as possible on the screen of the tree Moti. Only if you find them all can you continue on your way and receive the rest of the instructions. You have two minutes on the clock. Good luck :)😊♡");
     setInterval(timer, 120000);
 }
 function timer() {
