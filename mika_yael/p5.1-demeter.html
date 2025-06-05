@@ -9,77 +9,109 @@
     <style>
         #talking6 {
           position: fixed;
-          top: 0; left: 0; right: 0; bottom: 0;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          z-index: 1000;
-          font-family: Arial;
+          bottom: 350px; /* above Demeter */
+          left: 20px;
+          background: white;
+          color: black;
+          padding: 15px 20px;
+          border-radius: 15px;
+          font-family: Arial, sans-serif;
+          font-size: 16px;
+          max-width: 300px;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+          user-select: none;
+          z-index: 1001;
+          position: fixed;
         }
-        #talking6 img {
+        #talking6::after {
+          content: "";
+          position: absolute;
+          bottom: -15px;
+          left: 50%;
+          transform: translateX(-50%);
+          border-width: 15px 15px 0 15px;
+          border-style: solid;
+          border-color: white transparent transparent transparent;
+        }
+        #demeter1 {
+          position: fixed;
+          bottom: 20px;
+          left: 20px;
           max-width: 300px;
           border-radius: 8px;
           box-shadow: 0 0 15px rgba(0,0,0,0.5);
+          background: transparent;
+          z-index: 1000;
         }
         #wheat1 {
           position: absolute;
           display: none;
           width: 100px;
           cursor: pointer;
+          user-select: none;
+          z-index: 900;
+          background: transparent;
         }
         body {
           margin: 0;
           overflow: hidden;
+          /* Use your own background as you want */
         }
       </style>
-</head>
-<body>
-    <img id="wheat1" alt="wheat" src="https://img.lovepik.com/png/20231031/Wheat-ear-yellow-food-watercolor-ears-Staple-food-ear-of_425631_wh860.png">
-    <img id="demeter1" alt="demeter" src="https://i.pinimg.com/736x/7a/30/e0/7a30e093430fea58220c8c5014a2dec8.jpg">
-    <div id="talking6"></div>
-<script>
-    document.getElementById("talking6").innerHTML="Hello there, mortal. I'm demeter, the goddess of harvest. Right now, I'm going to test you by a simple game- you have 20 seconds to pick up as much wheat as you can. Ready?"
-    const image = document.getElementById('wheat1');
-    let gameActive = false;
-    const duration = 20000; // 20 seconds
-
-  function placeImageRandomly() {
-    const maxX = window.innerWidth - image.width;
-    const maxY = window.innerHeight - image.height;
-
-    const randomX = Math.random() * maxX;
-    const randomY = Math.random() * maxY;
-
-    image.style.left = `${randomX}px`;
-    image.style.top = `${randomY}px`;
-    image.style.display = "block";
-  }
-
-  function startGame() {
-    gameActive = true;
-    placeImageRandomly();
-
-    setTimeout(() => {
-      gameActive = false;
-      image.style.display = "none";
-      alert("Time's up!");
-    }, duration);
-  }
-
-  image.addEventListener("click", () => {
-    if (!gameActive) return;
-    image.style.display = "none";
-    placeImageRandomly();
-  });
-
-  // When user clicks anywhere on the dialog, close it and start the game
-  dialog.addEventListener('click', () => {
-    dialog.style.display = 'none';
-    startGame();
-  });
-</script>
+      </head>
+      <body>
+        <div id="talking6"></div>
+        <img id="demeter1" alt="demeter" src="https://i.pinimg.com/736x/7a/30/e0/7a30e093430fea58220c8c5014a2dec8.jpg" />
+        <img id="wheat1" alt="wheat" src="https://img.lovepik.com/png/20231031/Wheat-ear-yellow-food-watercolor-ears-Staple-food-ear-of_425631_wh860.png" />
+      
+    <script>
+        const talking6 = document.getElementById("talking6");
+        const demeter = document.getElementById("demeter1");
+        const wheat = document.getElementById("wheat1");
+        
+        const gameDuration = 20000; // 20 seconds
+        let gameActive = false;
+      
+        talking6.textContent = "Hello there, mortal. I'm Demeter, the goddess of harvest. Right now, I'm going to test you by a simple game - you have 20 seconds to pick up as much wheat as you can. Ready?";
+      
+        function placeWheatRandomly() {
+          const maxX = window.innerWidth - wheat.width;
+          const maxY = window.innerHeight - wheat.height;
+          const randomX = Math.random() * maxX;
+          const randomY = Math.random() * maxY;
+          wheat.style.left = randomX + "px";
+          wheat.style.top = randomY + "px";
+          wheat.style.display = "block";
+        }
+      
+        function startGame() {
+          gameActive = true;
+          placeWheatRandomly();
+      
+          setTimeout(() => {
+            gameActive = false;
+            wheat.style.display = "none";
+            alert("Time's up!");
+          }, gameDuration);
+        }
+      
+        wheat.addEventListener("click", () => {
+          if (!gameActive) return;
+          placeWheatRandomly();
+        });
+      
+        wheat.onload = () => {
+          setTimeout(() => {
+            talking6.style.display = "none";
+            demeter.style.display = "none";
+            startGame();
+          }, 5000);
+        };
+      
+        if (wheat.complete) {
+          wheat.onload();
+        }
+      </script>
 
 
 
