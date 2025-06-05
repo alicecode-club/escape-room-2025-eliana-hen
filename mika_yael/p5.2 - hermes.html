@@ -36,23 +36,33 @@
     </style>
     <div id="letter" class="popup">
         <img id="l1" class="letters" onclick="open_popup('l1')" alt="letter1"  src="https://png.pngtree.com/png-vector/20230923/ourmid/pngtree-letter-post-packet-mail-png-image_10137838.png">
-        <img id="l2" class="letters" alt="letter2"  src="https://png.pngtree.com/png-vector/20230923/ourmid/pngtree-letter-post-packet-mail-png-image_10137838.png">
-        <img id="l3" class="letters" alt="letter3"  src="https://png.pngtree.com/png-vector/20230923/ourmid/pngtree-letter-post-packet-mail-png-image_10137838.png">
+        <img id="l2" class="letters" onclick="open_popup('l2')" alt="letter2"  src="https://png.pngtree.com/png-vector/20230923/ourmid/pngtree-letter-post-packet-mail-png-image_10137838.png">
+        <img id="l3" class="letters" onclick="open_popup('l3')" alt="letter3"  src="https://png.pngtree.com/png-vector/20230923/ourmid/pngtree-letter-post-packet-mail-png-image_10137838.png">
     <span class="close" onclick="close_popup('l1')">X</span>
     </div>
 
     <div id="message" class="text">
         <img id="m1" class="messages" alt="message1" src="https://static.vecteezy.com/system/resources/previews/021/361/459/non_2x/watercolor-open-envelope-png.png";>
+        <h1 id="t1" class="texts">I Am The First Letter Of The God Of Wine</h1>
         <img id="m2" class="messages" alt="message1" src="https://static.vecteezy.com/system/resources/previews/021/361/459/non_2x/watercolor-open-envelope-png.png";>
+        <h1 id="t2" class="texts">I Am A Word That Connects Between Things</h1>
         <img id="m3" class="messages" alt="message1" src="https://static.vecteezy.com/system/resources/previews/021/361/459/non_2x/watercolor-open-envelope-png.png";>
-
+        <h1 id="t3" class="texts">I Am The Sound Of realization Human Make When Understanding Something</h1>
     </div>
 
 <script>
-    document.getElementById("message").style.display = "none";
+    document.getElementById("m1").style.display = "none";
+    document.getElementById("m2").style.display = "none";
+    document.getElementById("m3").style.display = "none";
+
+    document.getElementById("t1").style.display = "none";
+    document.getElementById("t2").style.display = "none";
+    document.getElementById("t3").style.display = "none";
+
   function open_popup(id) {
     const popup = document.getElementById(id);
-    document.getElementById("message").style.display = "block";
+    document.getElementById("m1").style.display = "block";
+    document.getElementById("t1").style.display = "block";
 
     popup.style.display = "block"; // show popup
   }
