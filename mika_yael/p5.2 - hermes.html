@@ -18,7 +18,7 @@
         .popup {
             position: fixed;
             bottom: 20px;                /* 20px from the bottom */
-            left: 50%;
+            left: 60%;
             transform: translateX(-50%); /* center horizontally */
             display: flex;
             gap: 290px;                   /* 20px space between letters */
@@ -35,22 +35,37 @@
 
     </style>
     <div id="letter" class="popup">
-        <img id="l1" class="letters" alt="letter1"  src="https://png.pngtree.com/png-vector/20230923/ourmid/pngtree-letter-post-packet-mail-png-image_10137838.png">
+        <img id="l1" class="letters" onclick="open_popup('l1')" alt="letter1"  src="https://png.pngtree.com/png-vector/20230923/ourmid/pngtree-letter-post-packet-mail-png-image_10137838.png">
         <img id="l2" class="letters" alt="letter2"  src="https://png.pngtree.com/png-vector/20230923/ourmid/pngtree-letter-post-packet-mail-png-image_10137838.png">
         <img id="l3" class="letters" alt="letter3"  src="https://png.pngtree.com/png-vector/20230923/ourmid/pngtree-letter-post-packet-mail-png-image_10137838.png">
-    <span class="close" onclick="close_popup(letter)">X</span>
+    <span class="close" onclick="close_popup('l1')">X</span>
     </div>
 
-    <script>
-        function open_popup(id) {
-            var popup = document.getElementById(id);
-            popup.style.display = "block";
-        }
-        function close_popup(id) {
-            var popup = document.getElementById(id);;
-            popup.style.display = "none";
-        }
-    </script>
+    <div id="message" class="text">
+        <img id="m1" class="messages" alt="message1" src="https://static.vecteezy.com/system/resources/previews/021/361/459/non_2x/watercolor-open-envelope-png.png";>
+        <img id="m2" class="messages" alt="message1" src="https://static.vecteezy.com/system/resources/previews/021/361/459/non_2x/watercolor-open-envelope-png.png";>
+        <img id="m3" class="messages" alt="message1" src="https://static.vecteezy.com/system/resources/previews/021/361/459/non_2x/watercolor-open-envelope-png.png";>
+
+    </div>
+
+<script>
+    document.getElementById("message").style.display = "none";
+  function open_popup(id) {
+    const popup = document.getElementById(id);
+    document.getElementById("message").style.display = "block";
+
+    popup.style.display = "block"; // show popup
+  }
+
+  function close_popup(id) {
+    const popup = document.getElementById(id);
+    popup.style.display = "none"; // hide popup
+  }
+
+  // Open popup on page load (for testing)
+  window.onclick = () => open_popup('l1');
+</script>
+
     
 
     
