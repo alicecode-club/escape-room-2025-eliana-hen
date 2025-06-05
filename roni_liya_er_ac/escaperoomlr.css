@@ -14,7 +14,13 @@ p {
 
 #diamond {
     display: none;
-    
+    width: 50vw; /* חצי מרוחב המסך */
+    height: 100px; /* לדוגמה */
+    background-color: lightblue;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .container {
