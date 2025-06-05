@@ -16,7 +16,7 @@ body{
     outline: none;
     background: none;
     padding: 0;
-    }
+}
 
 #lock:focus {
   outline: none;
@@ -178,4 +178,15 @@ button:hover {
 .items {
   position: absolute;
   transition: all 0.5s ease; /* optional for smooth movement */
+}
+
+#nextroom{
+    font-family: "Agbalumo", system-ui;
+    background-color:#FAE6E7;
+    padding: 25px ;
+    border:0;
+    border-radius:70px;
+    box-shadow: 0 8px 16px 0 #CF78A7;
+    font-size:15px;
+    margin-bottom:20px;
 }
