@@ -10,3 +10,18 @@ function nextPage3(){
 function nextPage4(){
     window.open("p4-hades.html", "_self");
 }
+function nextPage5(){
+    let b = document.createElement('div');
+    b.style = `
+      position:fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      background:black;
+      opacity:0;
+      transition:1s;
+      z-index:9999;
+    `;
+    document.body.appendChild(b);
+    requestAnimationFrame(b.style.opacity = 1);
+
+}
