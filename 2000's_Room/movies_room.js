@@ -229,3 +229,42 @@ function puzzlepage(){
     document.body.style.backgroundColor = "lightblue";
     showItems()
 }
+
+
+
+let correct = [
+  "glima.png",
+  "snich.png",
+  "Scarf-Hogwarts-HarryPotter-Product_1-4895205601277-removebg-preview.png",
+  "sharvit.png",
+  "Harry-Potter-Glasses-Flat-990x990.png",
+  "03487-removebg-preview.png",
+  "eb0fbfc1b0e4af0e249ec909f93e5893-removebg-preview.png"
+  
+];
+
+
+  let clicked = [];
+
+  let images = document.querySelectorAll(".items");
+
+  for (let i = 0; i < images.length; i++) {
+    images[i].onclick = function () {
+      let src = images[i].src;
+      let filename = src.substring(src.lastIndexOf("/") + 1); // לוקח רק את שם הקובץ
+
+      if (correct.includes(filename) && !clicked.includes(filename)) {
+        clicked.push(filename);
+        images[i].style.border = "3px solid green";
+      } else if (!correct.includes(filename)) {
+        images[i].style.border = "3px solid red";
+        alert("Wrong item, try again!");
+      }
+
+      if (clicked.length === correct.length) {
+        alert("Well done, you did it!");
+        document.getElementById("nextroom").style.display = "block";
+
+      }
+    };
+  }
