@@ -61,8 +61,21 @@
 
   function open_popup(id) {
     const popup = document.getElementById(id);
-    document.getElementById("m1").style.display = "block";
-    document.getElementById("t1").style.display = "block";
+    
+    if (id == "l1"){
+        document.getElementById("m1").style.display = "block";
+        document.getElementById("t1").style.display = "block";
+    }
+
+    else if (id == "l2"){
+        document.getElementById("m2").style.display = "block";
+        document.getElementById("t2").style.display = "block";
+    }
+
+    else if (id == "l3"){
+        document.getElementById("m3").style.display = "block";
+        document.getElementById("t3").style.display = "block";
+    }
 
     popup.style.display = "block"; // show popup
   }
@@ -74,6 +87,10 @@
 
   // Open popup on page load (for testing)
   window.onclick = () => open_popup('l1');
+  window.onclick = () => open_popup('l2');
+  window.onclick = () => open_popup('l3');
+
+
 </script>
 
     
