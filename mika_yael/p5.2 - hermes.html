@@ -18,7 +18,7 @@
         .popup {
             position: fixed;
             bottom: 20px;                /* 20px from the bottom */
-            left: 60%;
+            left: 50%;
             transform: translateX(-50%); /* center horizontally */
             display: flex;
             gap: 290px;                   /* 20px space between letters */
@@ -32,83 +32,185 @@
             justify-content: center;
         }
 
-        .messages {
-            margin: -120px auto 0 auto;
-            height: 1000px;
-            width: 900px;
+        .messages-container {
             position: relative;
+            width: 900px;
+            margin: -120px auto 0 auto;
+            display: none; /* default hidden */
             z-index: 3;
         }
 
-        .texts {
-            height: 1000px;
-            width: 900px;
-
-            color: black;
-            margin:0 auto;
-            position: relative;
-
-            font-family: 'Times New Roman', Times, serif;
-            z-index: 4;
+        .messages {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
+        .texts {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            font-family: 'Times New Roman', Times, serif;
+            z-index: 4;
+            font-size: 24px;
+            text-align: center;
+            width: 300px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+            background: red;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 9999;
+        }
         
+        .drops {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 80px;            /* gap between each drop box */
+            width: auto;          /* let width fit content */
+            /* optional: add padding or background for better visuals */
+        }
+
+        .drops > div {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #444;
+            /* add margin or background if you want */
+        }
+
+        #and, #a{
+            width:300px;
+            height:300px;
+        }
+
 
 
 
     </style>
     <div id="letter" class="popup">
-        <img id="l1" class="letters" onclick="open_popup('l1')" alt="letter1"  src="https://png.pngtree.com/png-vector/20230923/ourmid/pngtree-letter-post-packet-mail-png-image_10137838.png">
-        <img id="l2" class="letters" onclick="open_popup('l2')" alt="letter2"  src="https://png.pngtree.com/png-vector/20230923/ourmid/pngtree-letter-post-packet-mail-png-image_10137838.png">
-        <img id="l3" class="letters" onclick="open_popup('l3')" alt="letter3"  src="https://png.pngtree.com/png-vector/20230923/ourmid/pngtree-letter-post-packet-mail-png-image_10137838.png">
-    <span class="close" onclick="close_popup('l1')">X</span>
+        <img id="l3" class="letters" draggable="true" onclick="open_popup('l3')" alt="letter3"  src="https://png.pngtree.com/png-vector/20230923/ourmid/pngtree-letter-post-packet-mail-png-image_10137838.png">
+        <img id="l1" class="letters" draggable="true" onclick="open_popup('l1')" alt="letter1"  src="https://png.pngtree.com/png-vector/20230923/ourmid/pngtree-letter-post-packet-mail-png-image_10137838.png">
+        <img id="l2" class="letters" draggable="true" onclick="open_popup('l2')" alt="letter2"  src="https://png.pngtree.com/png-vector/20230923/ourmid/pngtree-letter-post-packet-mail-png-image_10137838.png">
     </div>
 
     <div id="message" class="text">
-        <img id="m1" class="messages" alt="message1" src="https://static.vecteezy.com/system/resources/thumbnails/065/853/155/small_2x/open-brown-kraft-envelope-with-blank-white-paper-inside-png.png";>
-        <h1 id="t1" class="texts">I Am The First Letter Of The God Of Wine</h1>
-        <img id="m2" class="messages" alt="message1" src="https://static.vecteezy.com/system/resources/thumbnails/065/853/155/small_2x/open-brown-kraft-envelope-with-blank-white-paper-inside-png.png";>
-        <h1 id="t2" class="texts">I Am A Word That Connects Between Things</h1>
-        <img id="m3" class="messages" alt="message1" src="https://static.vecteezy.com/system/resources/thumbnails/065/853/155/small_2x/open-brown-kraft-envelope-with-blank-white-paper-inside-png.png";>
-        <h1 id="t3" class="texts">I Am The Sound Of realization Human Make When Understanding Something</h1>
+        <span id="close" class="close" onclick="close_popup()">X</span>
+
+        <div id="m1" class="messages-container">
+            <img class="messages" src="https://static.vecteezy.com/system/resources/thumbnails/065/853/155/small_2x/open-brown-kraft-envelope-with-blank-white-paper-inside-png.png">
+            <h1 class="texts">I Am The First Letter Of The God Of Wine</h1>
+        </div>
+        <div id="m2" class="messages-container">
+            <img class="messages" src="https://static.vecteezy.com/system/resources/thumbnails/065/853/155/small_2x/open-brown-kraft-envelope-with-blank-white-paper-inside-png.png">
+            <h1 class="texts">I Am A Word That Connects Between Things</h1>
+        </div>
+        <div id="m3" class="messages-container">
+            <img class="messages" src="https://static.vecteezy.com/system/resources/thumbnails/065/853/155/small_2x/open-brown-kraft-envelope-with-blank-white-paper-inside-png.png">
+            <h1 class="texts">I Am The Sound Of realization Human Make When Understanding Something</h1>
+        </div>
+    </div>
+    <div class="drops">
+        <div class="drop" id="dropzone1" style="width:300px; height:300px; border: 2px dashed #444; margin: 20px auto;">
+            <img alt="d" id="d" src="https://assets.stickpng.com/thumbs/5f492a1368ecc70004ae70a4.png">
+        </div>
+        <div class="drop" id="dropzone2" style="width:300px; height:300px; border: 2px dashed #444; margin: 20px auto;">
+            <img alt="d" id="and" src="https://static.vecteezy.com/system/resources/previews/018/251/046/non_2x/ampersand-sign-symbol-on-transparent-background-free-png.png">
+        </div>
+        <div class="drop" id="dropzone3" style="width:300px; height:300px; border: 2px dashed #444; margin: 20px auto;">
+            <img alt="d" id="a" src="https://static.vecteezy.com/system/resources/thumbnails/045/264/438/small_2x/hand-drawn-speech-bubble-cartoon-ah-shout-png.png">
+        </div>
+          
+          
     </div>
 
-<script>
-    document.getElementById("m1").style.display = "none";
-    document.getElementById("m2").style.display = "none";
-    document.getElementById("m3").style.display = "none";
+    
 
-    document.getElementById("t1").style.display = "none";
-    document.getElementById("t2").style.display = "none";
-    document.getElementById("t3").style.display = "none";
+    <script>
+        // Hide all message containers and close button initially
+        ["m1", "m2", "m3"].forEach(id => document.getElementById(id).style.display = "none");
+        document.getElementById("close").style.display = "none";
+    
+        function open_popup(id) {
+            document.body.style.backgroundColor = "rgba(0, 0, 0, 0.1)";
+    
+            // Hide all message containers
+            ["m1", "m2", "m3"].forEach(mid => {
+                document.getElementById(mid).style.display = "none";
+            });
+    
+            // Show selected message
+            if (id === "l1") {
+                document.getElementById("m1").style.display = "block";
+            } else if (id === "l2") {
+                document.getElementById("m2").style.display = "block";
+            } else if (id === "l3") {
+                document.getElementById("m3").style.display = "block";
+            }
+    
+            // Show the close button
+            document.getElementById("close").style.display = "block";
+        }
+    
+        function close_popup() {
+            ["m1", "m2", "m3"].forEach(id => document.getElementById(id).style.display = "none");
+            document.getElementById("close").style.display = "none";
+            document.body.style.backgroundColor = ""; // Reset background
+        }
 
-    function open_popup(id) {
-    document.body.style.backgroundColor = "rgba(0, 0, 0, 0.1)";
 
-    // Hide all messages first
-    ["m1", "m2", "m3"].forEach(id => document.getElementById(id).style.display = "none");
-    ["t1", "t2", "t3"].forEach(id => document.getElementById(id).style.display = "none");
+        const letters = document.querySelectorAll('.letters');
 
-    // Show the one associated with the letter clicked
-    if (id === "l1") {
-        document.getElementById("m1").style.display = "block";
-        document.getElementById("t1").style.display = "block";
-    } else if (id === "l2") {
-        document.getElementById("m2").style.display = "block";
-        document.getElementById("t2").style.display = "block";
-    } else if (id === "l3") {
-        document.getElementById("m3").style.display = "block";
-        document.getElementById("t3").style.display = "block";
-    }
-}
+        letters.forEach(letter => {
+            letter.addEventListener('dragstart', (e) => {
+                e.dataTransfer.setData('text/plain', e.target.id);
+            });
+        });
+
+        function setupDropZone(dropzoneId, expectedLetterId) {
+            const dropzone = document.getElementById(dropzoneId);
+
+            dropzone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+            });
+
+            dropzone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                const draggedId = e.dataTransfer.getData('text/plain');
+                const draggedEl = document.getElementById(draggedId);
+
+                if (draggedId === expectedLetterId) {
+                    draggedEl.style.display = 'none';
+                    console.log(`${draggedId} was dropped into ${dropzoneId}!`);
+                } else {
+                    console.log(`${draggedId} is not allowed in ${dropzoneId}`);
+                }
+            });
+        }
+
+        // Setup the 3 drop zones with matching letter IDs
+        setupDropZone('dropzone1', 'l1');
+        setupDropZone('dropzone2', 'l2');
+        setupDropZone('dropzone3', 'l3');
 
 
-  function close_popup(id) {
-    const popup = document.getElementById(id);
-    popup.style.display = "none"; // hide popup
-  }
-
-</script>
+    </script>
+    
 
     
 
