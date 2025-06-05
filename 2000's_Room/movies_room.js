@@ -256,6 +256,7 @@ let correct = [
       if (correct.includes(filename) && !clicked.includes(filename)) {
         clicked.push(filename);
         images[i].style.border = "3px solid green";
+        alert("Correct!");
       } else if (!correct.includes(filename)) {
         images[i].style.border = "3px solid red";
         alert("Wrong item, try again!");
