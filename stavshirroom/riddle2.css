@@ -11,7 +11,8 @@
     font-family: cursive;
     top: -100px;
     left: 200px;
-    font-size: 40px;
+    padding: 10px 20px;
+    font-size: 50px;
     color:#fff;
   }
   .navbar {
@@ -23,6 +24,7 @@
     width:200px;
     display: block;
     margin: 10px auto;
+    height: 200px;
   }
   .container {
     display: grid;
@@ -40,7 +42,7 @@
     font-size: 30px;
     text-align: center;
   }
-  #name1,#name2,#name3,#name4{
+  #name1,#name2,#name3,#name4,#name5,#name6{
     display:flex;
     justify-content:space-around;
     margin:  10px 20px;
