@@ -1,15 +1,28 @@
 
  body{
-    background-color: burlywood;
+    font-family: cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #E4F1F3;
+    color:#4682b4;
  }
 #title{
-    font-family: 'Baloo Tammudu 2';
-    color:RoyalBlue ;
-    size:30px;
+    color:white;
+    font-family: cursive;
+    top: -100px;
+    left: 200px;
+    font-size: 40px;
+    color:#fff;
   }
+  .navbar {
+    height: 115px;
+    width: 100%;
+    
+}
   img{
     width:200px;
-    flex-direction:column;
+    display: block;
+    margin: 10px auto;
   }
   .container {
     display: grid;
@@ -17,7 +30,6 @@
     padding: 10px;
     grid-gap: 10px;
     column-gap: 15px;
-    column-rule: 4px double #ff00ff;
   }
   
   .container > div {
@@ -31,5 +43,8 @@
   #name1,#name2,#name3,#name4{
     display:flex;
     justify-content:space-around;
-    margin-right: 20px;
+    margin:  10px 20px;
+    padding: 10px;
+     background-color:#4682b4;
+     color:white
   }

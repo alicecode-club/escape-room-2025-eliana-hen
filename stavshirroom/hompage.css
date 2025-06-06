@@ -4,11 +4,12 @@ body{
     background-size:cover;
     background-size: 100% auto;
 }
-h1,h2{
+h1{
     color: black;
-    margin-right: 20px;
+    margin-right: 15px;
     padding: 15px;
     line-height: 20px;
+    position: relative;
 }
 h2{
     color: black;
