@@ -16,13 +16,17 @@ function image2(){
  }
 }
  function image3(){
-    alert("your clues  are:🔍\nMy leaf is on a country’s flag 🍁 that starts with c\nPeople tap my trunk to get something delicious 🥞\nIn fall, my leaves turn red, yellow, and gold\nGuess who I am, and go forth!");
+    alert("your clues are:🔍\nMy leaf is on a country’s flag 🍁 that starts with c\nPeople tap my trunk to get something delicious 🥞\nIn fall, my leaves turn red, yellow, and gold\nGuess who I am, and go forth!");
     var answer3=document.getElementById("name3").value;//לקיחת תשובה מהמשתמש
     if(answer3==Mapletree)//בדיקת תשובה 3{
         score+=1;
     }
     function image4(){
         alert("your clues  are:🔍\nI carry a brown fruit with water inside\nMy leaves are long, I love the sun🌴☀️\nI live where the sea and land meet🌊🏕️");
-    }
+        var answer4=document.getElementById("name4").value;//לקיחת תשובה מהמשתמש
+        if(answer4==PalmTree)//בדיקת תשובה 4{
+            score+=1;
+        }
+ 
 
 
