@@ -216,8 +216,17 @@
                         setTimeout(() => {
                             blackImg.classList.add("show");
                         }, 10);
+                        let time = 1;
 
-                        nextPage7();
+                        countdown();
+                        function countdown() {
+                            if (time > 0) {
+                                time--;
+                                setTimeout(countdown, 1000);
+                            } else {
+                                nextPage7();
+                            }
+                        }
                     }
 
                 } else {
