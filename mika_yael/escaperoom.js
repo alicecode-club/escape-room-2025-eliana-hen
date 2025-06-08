@@ -30,3 +30,7 @@ function nextPage5(){
 function nextPage6(){
     window.open("p5.2 - hermes.html", "_self");
 }
+
+function nextPage7(){
+    window.open("p6-artemis.html", "_self");
+}
