@@ -67,6 +67,8 @@
         <img id="wheat1" alt="wheat" src="https://img.lovepik.com/png/20231031/Wheat-ear-yellow-food-watercolor-ears-Staple-food-ear-of_425631_wh860.png" />
       
     <script>
+      let catchNum = 0;
+
         document.getElementById("button6").style.display = "none";
 
         const talking6 = document.getElementById("talking6");
@@ -96,7 +98,15 @@
             gameActive = false;
             wheat.style.display = "none";
             alert("Time's up!");
-            document.getElementById("button6").style.display = "block";
+            const gameDuration = 20000;
+            if (catchNum >= 10){
+              document.getElementById("button6").style.display = "block";
+            }
+            else{
+              let gameActive = false;
+              alert("You need to collect more!");
+              startGame();
+            }
 
           }, gameDuration);
         }
@@ -104,6 +114,8 @@
         wheat.addEventListener("click", () => {
           if (!gameActive) return;
           placeWheatRandomly();
+          catchNum++;
+          console.log(catchNum);
         });
       
         wheat.onload = () => {
