@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="escaperoom.css">
     <script defer src="escaperoom.js"></script>
     <title>part 5.1- demeter</title>
+    <button id="button6" onclick="nextPage6()">Next mission!</button>
+
     <style>
         #talking6 {
           position: fixed;
@@ -65,6 +67,8 @@
         <img id="wheat1" alt="wheat" src="https://img.lovepik.com/png/20231031/Wheat-ear-yellow-food-watercolor-ears-Staple-food-ear-of_425631_wh860.png" />
       
     <script>
+        document.getElementById("button6").style.display = "none";
+
         const talking6 = document.getElementById("talking6");
         const demeter = document.getElementById("demeter1");
         const wheat = document.getElementById("wheat1");
@@ -92,6 +96,8 @@
             gameActive = false;
             wheat.style.display = "none";
             alert("Time's up!");
+            document.getElementById("button6").style.display = "block";
+
           }, gameDuration);
         }
       

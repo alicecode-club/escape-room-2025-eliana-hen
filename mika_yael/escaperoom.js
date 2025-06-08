@@ -26,3 +26,7 @@ function nextPage5(){
     window.open("p5.1-demeter.html", "_self");
 
 }
+
+function nextPage6(){
+    window.open("p5.2-hermes.html", "_self");
+}
