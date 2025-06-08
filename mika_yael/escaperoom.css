@@ -463,3 +463,18 @@ h4{
     border-width: 10px;
     background-color:white;
 } 
+
+
+#black {
+    margin-top:-1000px;
+    height:3000px;
+    width:2000px;
+    opacity: 0;
+    z-index: 99999;
+    transition: opacity 1s ease;
+    display: none; /* initial state */
+  }
+  #black.show {
+    opacity: 1;
+  }
+  

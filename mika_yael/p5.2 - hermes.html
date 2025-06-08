@@ -144,15 +144,19 @@
           
     </div>
 
+    <img id="black" alt="black" src="https://wallpapers.com/images/hd/pure-black-background-wcs86b1g1awsprv8.jpg">
+
     
 
     <script>
+        let match = 0;
+
+        document.getElementById("black").style.display = "none";
         // Hide all message containers and close button initially
         ["m1", "m2", "m3"].forEach(id => document.getElementById(id).style.display = "none");
         document.getElementById("close").style.display = "none";
     
         function open_popup(id) {
-            document.body.style.backgroundColor = "rgba(0, 0, 0, 0.1)";
     
             // Hide all message containers
             ["m1", "m2", "m3"].forEach(mid => {
@@ -201,12 +205,27 @@
 
                 if (draggedId === expectedLetterId) {
                     draggedEl.style.display = 'none';
+                    match++
                     console.log(`${draggedId} was dropped into ${dropzoneId}!`);
+
+                    if (match == 3) {
+                        const blackImg = document.getElementById("black");
+                        blackImg.style.display = "block"; // make it appear in layout
+
+                        // wait a tiny bit, then trigger opacity transition
+                        setTimeout(() => {
+                            blackImg.classList.add("show");
+                        }, 10);
+                        window.location.href = "../p6 - artemis.html";
+                    }
+
                 } else {
                     console.log(`${draggedId} is not allowed in ${dropzoneId}`);
                 }
             });
         }
+
+
 
         // Setup the 3 drop zones with matching letter IDs
         setupDropZone('dropzone1', 'l1');
