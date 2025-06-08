@@ -1,13 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="escaperoom.css">
-    <script defer src="escaperoom.js"></script>
-    <title>Part6  -Artemis</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Part6 - Artemis</title>
+
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    #black {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      background-color: black;
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 1s ease;
+    }
+
+    #black.fade-out {
+      opacity: 0;
+    }
+  </style>
 </head>
 <body>
-    
+  <img
+    id="black"
+    src="https://wallpapers.com/images/hd/pure-black-background-wcs86b1g1awsprv8.jpg"
+    alt="black background"
+  />
+
+  <script>
+    const blackImg = document.getElementById("black");
+  
+    // Trigger fade-out
+    window.addEventListener("load", () => {
+      blackImg.classList.add("fade-out");
+  
+      // Remove from layout after fade completes
+      setTimeout(() => {
+        blackImg.style.display = "none";
+      }, 1000); // Matches the transition duration
+    });
+  </script>
+  
 </body>
 </html>
