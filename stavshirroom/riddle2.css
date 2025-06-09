@@ -15,6 +15,18 @@
     font-size: 50px;
     color:#fff;
   }
+  #check{
+    float: right;
+    font-size: 20px;
+    top: 500px;
+    border-style: dotted;
+    border-width: 5px;
+    padding: 10px;
+    
+  }
+  a :hover{
+    color: #E4F1F3;
+  }
   .navbar {
     height: 115px;
     width: 100%;

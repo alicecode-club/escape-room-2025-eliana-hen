@@ -8,7 +8,7 @@ function image1(){
   }
 }
 function image2(){
- alert("your clues are:🔍\nYou won't find me in Israel, I need rain, heat, and humidity all year round 🌦️\nI start with a C, I end with an O, and in the middle... another C 🔤\nI am the origin of a sweet thing that people of all ages love ☕️\nInside I have purple or brown seeds 🌰");
+ alert("your clues are:🔍\nYou won't find me in Israel, I need rain, heat, and humidity all year round 🌦️\nI start \nI am the origin of a sweet thing that people of all ages love ☕️\nInside I have purple or brown seeds 🌰");
  var answer2=document.getElementById("name2").value;//לקיחת תשובה מהמשתמש
  if(answer2==Cocoa){//בדיקת תשובה 2
     score+=1;
@@ -46,6 +46,13 @@ function image2(){
             score+=1;
         }
     }
+    function check_riddle_2(){
+        if(score>=4){
+            alert("you won!");
+        }
+        alert("you lose");
+
+     }
 
 
 
