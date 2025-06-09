@@ -42,6 +42,6 @@ function nextPage7(){
     window.open("p6-artemis.html", "_self");
 }
 
-function final(){
+function finish(){
     window.open("final.html", "_self");
 }
