@@ -420,3 +420,74 @@ h4{
     border-width: 10px;
     background-color:white;
 } 
+
+
+#button6 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers exactly */
+    
+    padding: 7px;
+    font-family: "Rye", serif;
+    font-size: 20px;
+    border-style: inset;
+    border-radius: 10px;
+    border-width: 10px;
+    background-color: rgb(29, 29, 29);
+    color: white;
+    cursor: pointer;
+}
+
+
+
+#button6:hover{
+    padding: 7px;
+    font-family: "Rye" , serif;
+    font-size:20px;
+    border-style: inset;
+    border-radius: 10px;
+    border-color: darkgrey;
+    border-width: 10px;
+    background-color:white;
+    color:black;
+}
+
+#button6:active{
+    padding: 7px;
+    font-family: "Rye" , serif;
+    font-size:20px;
+    border-style: outset;
+    border-radius: 10px;
+    border-color: darkgrey;
+    border-width: 10px;
+    background-color:white;
+} 
+
+
+#black {
+    margin-top:-1000px;
+    height:3000px;
+    width:2000px;
+    opacity: 0;
+    z-index: 99999;
+    transition: opacity 1s ease;
+    display: none; /* initial state */
+  }
+  #black.show {
+    opacity: 1;
+  }
+  
+
+
+  #talk1 , #talk2  ,#talk_a {
+
+    opacity: 0;
+    z-index: 99999;
+    transition: opacity 1s ease;
+    display: none; /* initial state */
+  }
+  #talk1 , #talk2  ,#talk_a.show {
+    opacity: 1;
+  }
+  

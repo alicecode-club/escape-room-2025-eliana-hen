@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="escaperoom.css">
+    <script defer src="escaperoom.js"></script>
+
+    <title>Part5.s - Hermes</title>
+</head>
+<body>
+
+    <h1 id="rules">Read the letters and then match each letter to it's fitting square</h1>
+    <style>
+        body{
+            background-image: url("https://images.hdqwalls.com/wallpapers/clouds-hd.jpg");
+
+        }
+
+
+        .popup {
+            position: fixed;
+            bottom: 20px;                /* 20px from the bottom */
+            left: 50%;
+            transform: translateX(-50%); /* center horizontally */
+            display: flex;
+            gap: 290px;                   /* 20px space between letters */
+        }
+
+        .letters {
+            width: 170px;
+            height: 170px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .messages-container {
+            position: relative;
+            width: 900px;
+            margin: -570px auto 0 auto;
+            display: none; /* default hidden */
+            z-index: 3;
+        }
+
+        .messages {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .texts {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            font-family: 'Times New Roman', Times, serif;
+            z-index: 4;
+            font-size: 24px;
+            text-align: center;
+            width: 300px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+            background: red;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 9999;
+        }
+        
+        .drops {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 80px;            /* gap between each drop box */
+            width: auto;          /* let width fit content */
+            /* optional: add padding or background for better visuals */
+        }
+
+        .drops > div {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #444;
+            /* add margin or background if you want */
+        }
+
+        #and, #a{
+            width:300px;
+            height:300px;
+        }
+
+
+        #rules{
+            margin-top:430px;
+        }
+
+    </style>
+    <div id="letter" class="popup">
+        <img id="l3" class="letters" draggable="true" onclick="open_popup('l3')" alt="letter3"  src="https://png.pngtree.com/png-vector/20230923/ourmid/pngtree-letter-post-packet-mail-png-image_10137838.png">
+        <img id="l1" class="letters" draggable="true" onclick="open_popup('l1')" alt="letter1"  src="https://png.pngtree.com/png-vector/20230923/ourmid/pngtree-letter-post-packet-mail-png-image_10137838.png">
+        <img id="l2" class="letters" draggable="true" onclick="open_popup('l2')" alt="letter2"  src="https://png.pngtree.com/png-vector/20230923/ourmid/pngtree-letter-post-packet-mail-png-image_10137838.png">
+    </div>
+
+    <div id="message" class="text">
+        <span id="close" class="close" onclick="close_popup()">X</span>
+
+        <div id="m1" class="messages-container">
+            <img class="messages" src="https://static.vecteezy.com/system/resources/thumbnails/065/853/155/small_2x/open-brown-kraft-envelope-with-blank-white-paper-inside-png.png">
+            <h1 class="texts">I Am The First Letter Of The God Of Wine</h1>
+        </div>
+        <div id="m2" class="messages-container">
+            <img class="messages" src="https://static.vecteezy.com/system/resources/thumbnails/065/853/155/small_2x/open-brown-kraft-envelope-with-blank-white-paper-inside-png.png">
+            <h1 class="texts">I Am A Word That Connects Between Things</h1>
+        </div>
+        <div id="m3" class="messages-container">
+            <img class="messages" src="https://static.vecteezy.com/system/resources/thumbnails/065/853/155/small_2x/open-brown-kraft-envelope-with-blank-white-paper-inside-png.png">
+            <h1 class="texts">I Am The Sound Of realization Human Make When Understanding Something</h1>
+        </div>
+    </div>
+    <div class="drops">
+        <div class="drop" id="dropzone1" style="width:300px; height:300px; border: 2px dashed #444; margin: 20px auto;">
+            <img alt="d" id="d" src="https://assets.stickpng.com/thumbs/5f492a1368ecc70004ae70a4.png">
+        </div>
+        <div class="drop" id="dropzone2" style="width:300px; height:300px; border: 2px dashed #444; margin: 20px auto;">
+            <img alt="d" id="and" src="https://static.vecteezy.com/system/resources/previews/018/251/046/non_2x/ampersand-sign-symbol-on-transparent-background-free-png.png">
+        </div>
+        <div class="drop" id="dropzone3" style="width:300px; height:300px; border: 2px dashed #444; margin: 20px auto;">
+            <img alt="d" id="a" src="https://static.vecteezy.com/system/resources/thumbnails/045/264/438/small_2x/hand-drawn-speech-bubble-cartoon-ah-shout-png.png">
+        </div>
+          
+          
+    </div>
+
+    <img id="black" alt="black" src="https://wallpapers.com/images/hd/pure-black-background-wcs86b1g1awsprv8.jpg">
+
+    
+
+    <script>
+        let match = 0;
+
+        document.getElementById("black").style.display = "none";
+        // Hide all message containers and close button initially
+        ["m1", "m2", "m3"].forEach(id => document.getElementById(id).style.display = "none");
+        document.getElementById("close").style.display = "none";
+    
+        function open_popup(id) {
+    
+            // Hide all message containers
+            ["m1", "m2", "m3"].forEach(mid => {
+                document.getElementById(mid).style.display = "none";
+            });
+    
+            // Show selected message
+            if (id === "l1") {
+                document.getElementById("m1").style.display = "block";
+            } else if (id === "l2") {
+                document.getElementById("m2").style.display = "block";
+            } else if (id === "l3") {
+                document.getElementById("m3").style.display = "block";
+            }
+    
+            // Show the close button
+            document.getElementById("close").style.display = "block";
+        }
+    
+        function close_popup() {
+            ["m1", "m2", "m3"].forEach(id => document.getElementById(id).style.display = "none");
+            document.getElementById("close").style.display = "none";
+            document.body.style.backgroundColor = ""; // Reset background
+        }
+
+
+        const letters = document.querySelectorAll('.letters');
+
+        letters.forEach(letter => {
+            letter.addEventListener('dragstart', (e) => {
+                e.dataTransfer.setData('text/plain', e.target.id);
+            });
+        });
+
+        function setupDropZone(dropzoneId, expectedLetterId) {
+            const dropzone = document.getElementById(dropzoneId);
+
+            dropzone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+            });
+
+            dropzone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                const draggedId = e.dataTransfer.getData('text/plain');
+                const draggedEl = document.getElementById(draggedId);
+
+                if (draggedId === expectedLetterId) {
+                    draggedEl.style.display = 'none';
+                    match++
+                    console.log(`${draggedId} was dropped into ${dropzoneId}!`);
+
+                    if (match == 3) {
+                        const blackImg = document.getElementById("black");
+                        blackImg.style.display = "block"; // make it appear in layout
+
+                        // wait a tiny bit, then trigger opacity transition
+                        setTimeout(() => {
+                            blackImg.classList.add("show");
+                        }, 10);
+                        let time = 1;
+
+                        countdown();
+                        function countdown() {
+                            if (time > 0) {
+                                time--;
+                                setTimeout(countdown, 1000);
+                            } else {
+                                nextPage7();
+                            }
+                        }
+                    }
+
+                } else {
+                    console.log(`${draggedId} is not allowed in ${dropzoneId}`);
+                }
+            });
+        }
+
+
+        // Setup the 3 drop zones with matching letter IDs
+        setupDropZone('dropzone1', 'l1');
+        setupDropZone('dropzone2', 'l2');
+        setupDropZone('dropzone3', 'l3');
+
+
+    </script>
+    
+
+    
+
+    
+</body>
+</html>
