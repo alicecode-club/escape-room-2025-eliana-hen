@@ -228,6 +228,7 @@ function puzzlepage(){
     document.body.style.backgroundImage = "none";
     document.body.style.backgroundColor = "lightblue";
     showItems()
+
 }
 
 
@@ -264,7 +265,7 @@ let correct = [
 
       if (clicked.length === correct.length) {
         alert("Well done, you did it!");
-        document.getElementById("nextroom").style.display = "block";
+        alert("To The Next Room!");
 
       }
     };
