@@ -69,6 +69,12 @@
       text-align: center;
       text-shadow: 2px 2px 10px #e3dfae;
     }
+
+    #mission{
+        text-align: center;
+        font-family:arial;
+        color:white;
+    }
   </style>
 </head>
 <body>
@@ -94,6 +100,8 @@
     const name = document.getElementById("name");
     const mission = document.getElementById("mission");
     const lightning = document.getElementById("lightning");
+
+    document.getElementById("mission").style.display = "none";
 
 
     // Initial fade-in of tb and t1
@@ -125,6 +133,7 @@
       fadeOut(t2);
       fadeIn(name);
       fadeIn(lightning);
+      document.getElementById("mission").style.display = "block";
       fadein(mission);
     }, 9000);
   </script>
