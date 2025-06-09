@@ -79,6 +79,8 @@
   <h1 id="talk_a">Need some light traveler?</h1>
   <h1 id="talk2">Y-Yes! Thank you... um...?</h1>
   <h1 id="name">ARTEMIS</h1>
+  <p id="mission">(remember what you came here for!)</p>
+  <img id="lightning" alt="lightning" onclick="finish()" src="https://pnghunter.com/get-logo.php?id=15625">
 
   <script>
     const fadeIn = (el) => el.classList.add("show");
@@ -90,6 +92,9 @@
     const at = document.getElementById("talk_a");
     const t2 = document.getElementById("talk2");
     const name = document.getElementById("name");
+    const mission = document.getElementById("mission");
+    const lightning = document.getElementById("lightning");
+
 
     // Initial fade-in of tb and t1
     setTimeout(() => {
@@ -119,6 +124,8 @@
       fadeOut(tb);
       fadeOut(t2);
       fadeIn(name);
+      fadeIn(lightning);
+      fadein(mission);
     }, 9000);
   </script>
 </body>
