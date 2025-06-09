@@ -1,11 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Realistic Human Hand Peek and Click</title>
-  <style>
-    body {
+.backgroundlol{
+    background-image: url(https://static.vecteezy.com/system/resources/thumbnails/026/798/061/small_2x/female-hand-pointing-upwards-transparent-png.png);
+    background-size: 100vw , 100vh;
+};
+#red-button{
+    border-radius:50%;
+    height: 80px;
+    width: 80px;
+    background-color:red;
+    
+  }
+
+  body {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -55,23 +60,3 @@
         bottom: -900px;
       }
     }
-  </style>
-</head>
-<body>
-  <!-- SVG image of a realistic hand -->
-  <div class="hand-container">
-    <img
-      class="hand"
-      src="https://static.vecteezy.com/system/resources/thumbnails/026/798/061/small_2x/female-hand-pointing-upwards-transparent-png.png"
-      alt="Realistic Human Hand"
-    />
-  </div>
-
-  <script>
-    // Optional: Add interactivity if needed
-    document.querySelector('.hand-container').addEventListener('click', () => {
-      alert('Invisible button clicked!');
-    });
-  </script>
-</body>
-</html>
