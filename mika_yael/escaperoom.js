@@ -41,3 +41,7 @@ function nextPage6(){
 function nextPage7(){
     window.open("p6-artemis.html", "_self");
 }
+
+function final(){
+    window.open("final.html", "_self");
+}
