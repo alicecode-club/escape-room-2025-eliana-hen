@@ -22,7 +22,14 @@ function nextPage5(){
       z-index:9999;
     `;
     document.body.appendChild(b);
-    requestAnimationFrame(b.style.opacity = 1);
-    window.open("p5.1-demeter.html", "_self");
+   // Force style update before triggering fade
+  requestAnimationFrame(() => {
+    overlay.style.opacity = "1";
+  });
+
+  // Navigate after fade finishes
+  setTimeout(() => {
+    window.location.href = "p5.1-demeter.html";
+  }, 1000);
 
 }
