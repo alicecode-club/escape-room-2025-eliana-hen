@@ -478,3 +478,16 @@ h4{
     opacity: 1;
   }
   
+
+
+  #talk1 , #talk2  ,#talk_a {
+
+    opacity: 0;
+    z-index: 99999;
+    transition: opacity 1s ease;
+    display: none; /* initial state */
+  }
+  #talk1 , #talk2  ,#talk_a.show {
+    opacity: 1;
+  }
+  

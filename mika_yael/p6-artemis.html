@@ -10,7 +10,60 @@
         background-image: url("https://wallpapers.com/images/hd/pure-black-background-wcs86b1g1awsprv8.jpg");
     }
 
+    #thinking_bub {
+        width: 300px;
+        height: 300px;
+        margin-left: 1020px;
+        opacity: 0;
+        transition: opacity 1s ease;
+        display: none;
+    }
 
+    #talk1 {
+        text-align: center;
+        font-family: Arial;
+        width: 200px;
+        margin-left: 1070px;
+        margin-top: -250px;
+        opacity: 0;
+        transition: opacity 1s ease;
+        display: none;
+    }
+
+    .show {
+        opacity: 1;
+    }
+
+    /* Keep these hidden for now */
+    #talk_a, #talk2, #name {
+        display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <img id="thinking_bub" alt="thinkingBubble" src="https://www.freeiconspng.com/uploads/word-speech-bubble-png-4.png">
+  <h1 id="talk1" class="text">Hmm... It's really dark here</h1>
+  <h1 id="talk_a" class="text">Need some light traveler?</h1>
+  <h1 id="talk2" class="text">Y-Yes! Thank you... um...?</h1>
+  <h1 id="name" class="artemis">ARTEMIS</h1>
+
+  <script>
+    const bub1 = document.getElementById("thinking_bub");
+    const talk1 = document.getElementById("talk1");
+
+    // Step 1: Make them visible
+    bub1.style.display = "block";
+    talk1.style.display = "block";
+
+    // Step 2: Force a reflow (forces the browser to register the layout change)
+    void bub1.offsetWidth;
+    void talk1.offsetWidth;
+
+    // Step 3: Trigger fade-in
+    bub1.classList.add("show");
+    talk1.classList.add("show");
+  </script>
   
 </body>
 </html>
