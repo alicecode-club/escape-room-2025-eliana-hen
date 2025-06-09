@@ -15,10 +15,17 @@
       transition: background-color 1s ease;
     }
 
-    img, h1 {
+    img {
       opacity: 0;
       transition: opacity 1s ease;
       position: relative;
+    }
+
+    h1 {
+      opacity: 0;
+      transition: opacity 1s ease;
+      position: relative;
+      color: black;
     }
 
     .show {
@@ -101,6 +108,8 @@
       fadeIn(tb);
       fadeIn(t1);
     }, 100);
+
+    
 
     // After 4s, fade-out tb/t1, fade-in ba/at
     setTimeout(() => {
