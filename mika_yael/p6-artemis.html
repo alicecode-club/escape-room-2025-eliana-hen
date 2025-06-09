@@ -2,28 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Part6 - Artemis</title>
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
-    </style>
-  <style>
     @import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
-    </style>
-  <style>
 
+    body {
+      background-color: black;
+      margin: 0;
+      transition: background-color 1s ease;
+    }
 
+    img, h1 {
+      opacity: 0;
+      transition: opacity 1s ease;
+      position: relative;
+    }
+
+    .show {
+      opacity: 1;
+    }
 
     #thinking_bub {
       width: 300px;
       height: 300px;
       margin-left: 1020px;
+      margin-top: 20px;
     }
 
-    #a_bub{
-      margin-top:-70px;
+    #a_bub {
+      margin-top: -70px;
       width: 500px;
       height: 480px;
+      margin-left: 20px;
     }
 
     #talk1 {
@@ -42,37 +55,71 @@
       margin-top: -460px;
     }
 
-    #talk_a{
-        font-family: "Merienda", cursive;
-        margin-top:260px;
-        width:400px;
-        margin-left:80px;
-        text-align:center;
+    #talk_a {
+      font-family: "Merienda", cursive;
+      margin-top: 260px;
+      width: 400px;
+      margin-left: 80px;
+      text-align: center;
     }
 
-    #name{
-        font-family: "Sofia", cursive;
-        font-size:60px;
-        text-align:center;
-        text-shadow: 2px 2px 10px #ff0000;
-
+    #name {
+      font-family: "Sofia", cursive;
+      font-size: 60px;
+      text-align: center;
+      text-shadow: 2px 2px 10px #ff0000;
     }
-
   </style>
 </head>
 <body>
 
-  <img id="thinking_bub" alt="thinkingBubble" src="https://www.freeiconspng.com/uploads/word-speech-bubble-png-4.png">
-  <img id="a_bub" alt="talkingBubble_a" src="https://png.pngtree.com/png-clipart/20230103/original/pngtree-chalt-box02-png-image_8864973.png">
+  <img id="thinking_bub" src="https://www.freeiconspng.com/uploads/word-speech-bubble-png-4.png" alt="thinkingBubble">
+  <img id="a_bub" src="https://png.pngtree.com/png-clipart/20230103/original/pngtree-chalt-box02-png-image_8864973.png" alt="talkingBubble_a">
   <h1 id="talk1">Hmm... It's really dark here</h1>
   <h1 id="talk_a">Need some light traveler?</h1>
   <h1 id="talk2">Y-Yes! Thank you... um...?</h1>
-  <h1 id="name" class="artemis">ARTEMIS</h1>
-<script>
+  <h1 id="name">ARTEMIS</h1>
 
+  <script>
+    const fadeIn = (el) => el.classList.add("show");
+    const fadeOut = (el) => el.classList.remove("show");
 
+    const tb = document.getElementById("thinking_bub");
+    const t1 = document.getElementById("talk1");
+    const ba = document.getElementById("a_bub");
+    const at = document.getElementById("talk_a");
+    const t2 = document.getElementById("talk2");
+    const name = document.getElementById("name");
 
-</script>
+    // Initial fade-in of tb and t1
+    setTimeout(() => {
+      fadeIn(tb);
+      fadeIn(t1);
+    }, 100);
 
+    // After 4s, fade-out tb/t1, fade-in ba/at
+    setTimeout(() => {
+      fadeOut(tb);
+      fadeOut(t1);
+      fadeIn(ba);
+      fadeIn(at);
+    }, 4100);
+
+    // After 6.5s, fade-out ba/at, fade-in tb/t2
+    setTimeout(() => {
+      fadeOut(ba);
+      fadeOut(at);
+      fadeIn(tb);
+      fadeIn(t2);
+    }, 6600);
+
+    // After 9s, change background, fade-out tb/t2, fade-in name
+    setTimeout(() => {
+      document.body.style.backgroundColor = "#1a1a1a";
+      fadeOut(tb);
+      fadeOut(t2);
+      fadeIn(name);
+    }, 9000);
+  </script>
 </body>
 </html>
