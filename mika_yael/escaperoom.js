@@ -46,3 +46,7 @@ function nextPage7(){
 function finish(){
     window.open("final.html", "_self");
 }
+
+function check(){
+    alert("To the next room!");
+}
