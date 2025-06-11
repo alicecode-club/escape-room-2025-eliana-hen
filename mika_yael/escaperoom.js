@@ -47,6 +47,6 @@ function finish(){
     window.open("final.html", "_self");
 }
 
-function check(){
+function check2(){
     alert("To the next room!");
 }
