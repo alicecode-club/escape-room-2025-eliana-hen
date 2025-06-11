@@ -68,62 +68,58 @@
         <button id="button6" type="button6" onclick="nextPage6()">Next mission!</button>
 
 
-    <script>
-
-        document.getElementById("button6").style.display = "none";
-
-        const talking6 = document.getElementById("talking6");
-        const demeter = document.getElementById("demeter1");
-        const wheat = document.getElementById("wheat1");
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("button6").style.display = "none";
         
-        const gameDuration = 20000; // 20 seconds
-        let gameActive = false;
-      
-        talking6.textContent = "Hello there, mortal. I'm Demeter, the goddess of harvest. Right now, I'm going to test you by a simple game - you have 20 seconds to pick up as much wheat as you can. Ready?";
-      
-        function placeWheatRandomly() {
-          const maxX = window.innerWidth - wheat.width;
-          const maxY = window.innerHeight - wheat.height;
-          const randomX = Math.random() * maxX;
-          const randomY = Math.random() * maxY;
-          wheat.style.left = randomX + "px";
-          wheat.style.top = randomY + "px";
-          wheat.style.display = "block";
-        }
-      
-        function startGame() {
-          gameActive = true;
-          placeWheatRandomly();
-      
-          setTimeout(() => {
-            gameActive = false;
-            wheat.style.display = "none";
-            alert("Time's up!");
-            document.getElementById("button6").style.display = "block";
-
-          }, gameDuration);
-        }
-      
-        wheat.addEventListener("click", () => {
-          if (!gameActive) return;
-          placeWheatRandomly();
-          catchNum++;
-          console.log(catchNum);
-        });
-      
-        wheat.onload = () => {
-          setTimeout(() => {
-            talking6.style.display = "none";
-            demeter.style.display = "none";
-            startGame();
-          }, 5000);
-        };
-      
-        if (wheat.complete) {
-          wheat.onload();
-        }
-       
-      </script>
+            const talking6 = document.getElementById("talking6");
+            const demeter = document.getElementById("demeter1");
+            const wheat = document.getElementById("wheat1");
+            let catchNum = 0;
+        
+            const gameDuration = 20000; // 20 seconds
+            let gameActive = false;
+        
+            talking6.textContent = "Hello there, mortal. I'm Demeter, the goddess of harvest. Right now, I'm going to test you by a simple game - you have 20 seconds to pick up as much wheat as you can. Ready?";
+        
+            function placeWheatRandomly() {
+              const maxX = window.innerWidth - wheat.width;
+              const maxY = window.innerHeight - wheat.height;
+              const randomX = Math.random() * maxX;
+              const randomY = Math.random() * maxY;
+              wheat.style.left = randomX + "px";
+              wheat.style.top = randomY + "px";
+              wheat.style.display = "block";
+            }
+        
+            function startGame() {
+              gameActive = true;
+              placeWheatRandomly();
+        
+              setTimeout(() => {
+                gameActive = false;
+                wheat.style.display = "none";
+                alert("Time's up! You caught " + catchNum + " wheat.");
+                document.getElementById("button6").style.display = "block";
+              }, gameDuration);
+            }
+        
+            wheat.addEventListener("click", () => {
+              if (!gameActive) return;
+              placeWheatRandomly();
+              catchNum++;
+              console.log(catchNum);
+            });
+        
+            // Delay game start after intro
+            setTimeout(() => {
+              talking6.style.display = "none";
+              demeter.style.display = "none";
+              startGame();
+            }, 5000);
+          });
+        </script>
+        
 
 
 
