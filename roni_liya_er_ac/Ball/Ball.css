@@ -1,0 +1,33 @@
+#btn1 {
+    display: flex;
+    background-color: blue;
+    border: 2px solid #333;
+    border-radius: 12px; /* זו הפקודה שמעגלת את הפינות */
+    padding: 16px;
+    width: 200px;
+    text-align: center;
+}
+
+.lock-container {
+    display: none;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px 12px;
+    width: fit-content;
+    background-color: #f7f7f7;
+}
+
+.lock-icon {
+    font-size: 20px;
+    margin-left: 8px;
+}
+
+.code-input {
+    border: none;
+    outline: none;
+    font-size: 18px;
+    width: 100px;
+    background: transparent;
+    direction: ltr;
+}
