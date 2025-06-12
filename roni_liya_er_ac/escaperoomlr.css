@@ -74,41 +74,32 @@ p {
     left: 50%;
     margin-left: -80px; }
 
-#backeground img {
-    width: 100%; /* התמונה תמלא את המיכל */
-    height: auto; /* שמירה על פרופורציות */
-    border-radius: 8px; /* פינות מעוגלות */
+.backeground {
+  padding-top: 0%;
+  top: 0%;
 }
 
 body {
-  background-color: #f2eacb;
+  
   font-family: 'Times New Roman', serif;
   direction: rtl;
   text-align: center;
-  padding-top: 50px;
+  
 }
 
 .open-btn {
-  /*padding: 12px 25px;
-  font-size: 18px;
-font-weight: bold;
-  background-color: #8b5e3c;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-family: 'Times New Roman', serif;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);*/
+
   display: none;
   position: absolute;       
-  top: 0;
-  left: 0;
-  width: 300px;            
-  height: 200px;           
-  background-color: #ff3b3b;
+  top: 52%;
+  left: 29.4%;
+  width: 50px;            
+  height: 32px;           
+  background-color: #ffffff00;
   display: flex;            
   justify-content: center; 
   align-items: center;  
+  border-color: #ffffff00;
 }
 
     .popup-overlay {
