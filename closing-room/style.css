@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+#title{
+    color: aliceblue;
+    text-align: center;
+    
+}
+
+
+
 body {
     display: flex;
     justify-content: center;
