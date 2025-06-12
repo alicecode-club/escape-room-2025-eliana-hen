@@ -3,25 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="openingroom.css">
+
   <title>Realistic Human Hand Peek and Click</title>
+  
 </head>
 <body>
-  <!-- SVG image of a realistic hand -->
-  <div class="hand-container">
+
+  <div style="display:none;" id="hand-container">
     <img
-      class="hand"
+      id="hand"
       src="https://static.vecteezy.com/system/resources/thumbnails/026/798/061/small_2x/female-hand-pointing-upwards-transparent-png.png"
       alt="Realistic Human Hand"
     />
   </div>
-
-  <script>
-    // Optional: Add interactivity if needed
-    document.querySelector('.hand-container').addEventListener('click', () => {
-      alert('Invisible button clicked!');
-    });
-  </script>
-        <script src = "index.js"></script> 
-
+  
+    <button onclick = "hand()" id = "dontclick" type="button"><img src="5a58e52f9538462e5a82d479.png"/> 
+        <script src = "openingroom.js"></script> 
 </body>
 </html>

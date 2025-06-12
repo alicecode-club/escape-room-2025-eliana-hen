@@ -1,10 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Coral+Pixels&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
 body{
-    background-image: url(https://i.pinimg.com/736x/7f/79/6c/7f796c2430eb6f3509ec803f1d28355b.jpg);
+    background-image: url(https://i.pinimg.com/736x/42/ac/9a/42ac9aa08479613a981898f32615f8be.jpg);
     background-size:100vw 100vh;
 }
 
+#y2k{
+   background: none;
+    border: none;
+    
+    border: none;
+    box-shadow: none;
+    outline: none;
+    background: none;
+    padding: 0; 
+}
+
+#y2k img{
+    width:500px;
+    height:250px;
+    margin-left: 370px;
+}
+
+#explanation{
+    color:#d26caf;
+    width:1100px;
+    height:50px;
+    margin-left:50px;
+    background-color:#fbe135;
+    border-radius: 50%;
+    padding-bottom:10px;
+    padding:10px;
+
+}
+#opening{
+    display:flex;
+    flex-direction:column;
+}
 
 #lock{
     background: none;
