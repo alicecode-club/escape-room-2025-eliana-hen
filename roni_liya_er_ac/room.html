@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <img src="room.png" alt="background2" class="background2">
+    <img src="dairy.png" onclick="openPopup()" alt="dairy " style="cursor: pointer; width: 40px;" class="open-d"/>
+    <link rel="stylesheet" href="escaperoomlr.css">
+</head>
+<body>
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup">
+          <span class="close-btn" onclick="closePopup()">×</span><p>
+            Beneath the moonlight, I danced alone again tonight.
+            The evening was quiet, and the hall felt empty without him.
+            My maid whispered secrets, but none I wished to hear.
+            I longed for the melody that once filled the ivory room.
+            Nothing feels as real as those silent promises.
+            The scent of roses faded, leaving only dust and doubt.
+            
+            Tomorrow brings another chance—or another goodbye.
+            I placed his letter inside the golden box, where hope still lingers.
+            Everything in me wants to believe he’ll return.
+            The mirror reflected more than my mask tonight.
+            My fingers trembled as I touched the cold image.
+            Remember, I told myself, remember what you must forget.
+            Real truth hides in plain sight.
+            Only silence knows what lies out of view.
+            And still, I stand before the reflection… waiting.
+            
+            <br>
+          </p>
+          <div class="riddle">
+            <p>qr</p>
+          </div>
+    
+          <input type="text" id="answerInput" placeholder="enter">
+          <button class="submit-btn" onclick="checkAnswer()">send</button>
+    
+          <img id="diamond" src="https://www.berzon-ins.co.il/wp-content/uploads/2018/08/%D7%9E%D7%A6%D7%A2%D7%93-%D7%A2%D7%A9%D7%A8%D7%AA-%D7%94%D7%99%D7%94%D7%9C%D7%95%D7%9E%D7%99%D7%9D.png" alt="">
+    
+          <div class="message" id="message"></div>
+        
+        </div>
+        <script src="escaperoomlr.js"></script>
+      </div>
+</body>
+</html>

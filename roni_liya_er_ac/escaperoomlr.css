@@ -71,6 +71,9 @@ p {
 .backeground {
   padding-top: 0%;
   top: 0%;
+  position: relative;
+  display: inline-block;
+  display: block;
 }
 
 body {
@@ -81,19 +84,30 @@ body {
   
 }
 
-.open-btn {
-
+.open-btn { 
+  width: 207px;    
+  height: 40;
   display: none;
   position: absolute;       
-  top: 52%;
-  left: 29.4%;
-  width: 50px;            
-  height: 32px;           
-  background-color: #ffffff00;
+  top: 45.6%;
+  left: 30%;       
   display: flex;            
   justify-content: center; 
   align-items: center;  
-  border-color: #ffffff00;
+  
+}
+
+.open-d { 
+  width: 207px;    
+  height: 40;
+  display: none;
+  position: absolute;       
+  top: 109%;
+  left: 24.7%;       
+  display: flex;            
+  justify-content: center; 
+  align-items: center;  
+  
 }
 
     .popup-overlay {
