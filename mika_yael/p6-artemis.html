@@ -55,12 +55,13 @@
     }
 
     #lightning {
-      display: block;
-      margin: 40px auto;
-      width: 100px;
-      opacity: 0;
-      transition: opacity 1s ease;
-      cursor: pointer;
+        opacity: 0;
+        transition: opacity 1s ease;
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
     }
 
     #lightning.show {
