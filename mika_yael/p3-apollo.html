@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="escaperoom.css">
+    <script defer src="escaperoom.js"></script>
+    <title>Part3 - Apollo</title>
+</head>
+<body>
+    <h1>Hit the targets!</h1>
+    <div id="t1" class="t"></div>
+    <div id="t2" class="t"></div>
+    <div id="t3" class="t"></div>
+    <button id="button" type="button" onclick="nextPage4()">Next mission!</button>
+    <script>
+
+        let score = 0
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("button").style.display = "none";
+
+            const circles = document.getElementsByClassName("t");
+
+            for (let i = 0; i < circles.length; i++) {
+                circles[i].addEventListener("click", function () {
+                    this.style.display = "none";
+                    score++;
+                    console.log(score);
+
+                    if (score === 3){
+                        document.getElementById("button").style.display = "block";
+                    }
+                });
+            }
+        });
+
+    </script>
+
+
+    
+</body>
+</html>
