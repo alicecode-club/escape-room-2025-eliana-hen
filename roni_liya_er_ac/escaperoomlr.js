@@ -1,3 +1,4 @@
+   alart 
    function openPopup() {
       document.getElementById("popupOverlay").style.display = "flex";
       document.getElementById("message").textContent = "";
@@ -18,10 +19,11 @@
         document.getElementById('diamond').style.display = "flex";
         setTimeout(() => {
         document.getElementById('diamond').style.display = "none";
-        window.location.href = "eracBall.html"; 
+        window.location.href = "./Ball/eracBall.html";
       }, 1000);
-      } else {
+      }
+      else {
         message.style.color = "red";
         message.textContent = "תשובה שגויה... נסה/י שוב.";
       }
-    }
+    } 

@@ -2,9 +2,8 @@
     display: flex;
     background-color: blue;
     border: 2px solid #333;
-    border-radius: 12px; /* זו הפקודה שמעגלת את הפינות */
+    border-radius: 12px;
     padding: 16px;
-    width: 200px;
     text-align: center;
 }
 
