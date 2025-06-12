@@ -8,39 +8,28 @@
     <link rel="stylesheet" href="escaperoomlr.css">
 </head>
 <body>
+    <style> .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 24px;
+        color: #888;
+        cursor: pointer;
+        transition: color 0.3s ease;
+      }
+  
+      .close-btn:hover {
+        color: rgb(6, 6, 6);
+      }
+      </style>
     <div class="popup-overlay" id="popupOverlay">
         <div class="popup">
-          <span class="close-btn" onclick="closePopup()">×</span><p>
-            Beneath the moonlight, I danced alone again tonight.
-            The evening was quiet, and the hall felt empty without him.
-            My maid whispered secrets, but none I wished to hear.
-            I longed for the melody that once filled the ivory room.
-            Nothing feels as real as those silent promises.
-            The scent of roses faded, leaving only dust and doubt.
-            
-            Tomorrow brings another chance—or another goodbye.
-            I placed his letter inside the golden box, where hope still lingers.
-            Everything in me wants to believe he’ll return.
-            The mirror reflected more than my mask tonight.
-            My fingers trembled as I touched the cold image.
-            Remember, I told myself, remember what you must forget.
-            Real truth hides in plain sight.
-            Only silence knows what lies out of view.
-            And still, I stand before the reflection… waiting.
-            
+            <span class="close-btn" onclick="document.getElementById('popupOverlay').style.display='none'">&times;</span>
+            <p>
+            <span class="highlight">b</span>eneath the moonlight i danced alone again tonight, the evening was quiet and the hall felt <span class="highlight">e</span>mpty without him. my maid whispered secrets but none i wished to <span class="highlight">h</span>ear, i longed for the melody that once filled the <span class="highlight">i</span>vory room. <span class="highlight">n</span>othing feels as real as those silent promises. the scent of roses faded, leaving only <span class="highlight">d</span>ust and doubt. <span class="highlight">t</span>omorrow brings another chance—or another goodbye. i placed his letter inside the golden box where <span class="highlight">h</span>ope still lingers. <span class="highlight">e</span>verything in me wants to believe he’ll return. the mirror reflected more than my <span class="highlight">m</span>ask tonight. my fingers trembled as i touched the cold <span class="highlight">i</span>mage. <span class="highlight">r</span>emember, i told myself, remember what you must forget. <span class="highlight">r</span>eal truth hides in plain sight. only silence knows what lies <span class="highlight">o</span>ut of view, and still I stand before the <span class="highlight">r</span>eflection… waiting.
             <br>
           </p>
-          <div class="riddle">
-            <p>qr</p>
-          </div>
-    
-          <input type="text" id="answerInput" placeholder="enter">
-          <button class="submit-btn" onclick="checkAnswer()">send</button>
-    
-          <img id="diamond" src="https://www.berzon-ins.co.il/wp-content/uploads/2018/08/%D7%9E%D7%A6%D7%A2%D7%93-%D7%A2%D7%A9%D7%A8%D7%AA-%D7%94%D7%99%D7%94%D7%9C%D7%95%D7%9E%D7%99%D7%9D.png" alt="">
-    
-          <div class="message" id="message"></div>
-        
+          
         </div>
         <script src="escaperoomlr.js"></script>
       </div>

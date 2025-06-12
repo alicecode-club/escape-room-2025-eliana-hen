@@ -90,6 +90,10 @@ body {
   
 }
 
+.highlight {
+  color: rgb(28, 28, 137);
+  font-weight: bold;}
+
 .open-btn { 
   width: 207px;    
   height: 40;
@@ -183,3 +187,4 @@ body {
   font-weight: bold;
   color: #2e5c2c;
 }
+
