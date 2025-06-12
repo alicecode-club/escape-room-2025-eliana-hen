@@ -12,10 +12,14 @@
       const input = document.getElementById("answerInput").value.trim().toLowerCase();
       const message = document.getElementById("message");
 
-      // התשובה הנכונה: "הד"
       if (input == "יהלום") {
         message.style.color = "green";
         message.textContent = "ענית נכונה! השערים ייפתחו לפניך...";
+        document.getElementById('diamond').style.display = "flex";
+        setTimeout(() => {
+        document.getElementById('diamond').style.display = "none";
+        window.location.href = "eracBall.html"; 
+      }, 1000);
       } else {
         message.style.color = "red";
         message.textContent = "תשובה שגויה... נסה/י שוב.";
