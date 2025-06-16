@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="escaperoom.css">
+    <script defer src="js/escaperoom.js"></script>
+    <title>Part2 - Hephaestus</title>
+</head>
+<body>
+    <img src="https://images.vexels.com/media/users/3/188534/isolated/preview/68ef69c23c50af4c80c64294d96b3900-hephaistos-greek-god.png" alt="hephaestus" id="hephaestus">
+    <div id="mission">My! It looks like someone broke the statue I made! You! Mortal! Help fix It!</div>
+    <div id="timer2"></div>
+
+
+    <script>
+            let time = 10;
+
+            function countdown() {
+                if (time > 0) {
+                    time--;
+                    setTimeout(countdown, 1000);
+                } else {
+                    document.getElementById("timer2").textContent = "Time's up!";
+                    puzzle();
+                }
+            }
+
+            function puzzle(){
+                window.location.href = "puzzle - p2.html";
+            }
+
+            countdown();
+    </script>
+
+</body>
+</html>

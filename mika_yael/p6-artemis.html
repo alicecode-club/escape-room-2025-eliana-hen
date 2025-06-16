@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script defer src="escaperoom.js"></script>
+  <title>Part6 - Artemis</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
+
+    body {
+      background-color: black;
+      margin: 0;
+      transition: background-color 1s ease;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      opacity: 0;
+      transition: opacity 1s ease;
+      color: white;
+      text-align: center;
+      margin: 40px auto;
+      max-width: 80%;
+    }
+
+    p{
+        opacity: 0;
+      transition: opacity 1s ease;
+      color: white;
+      text-align: center;
+      margin: 40px auto;
+      max-width: 80%;  
+    }
+
+    .show {
+      opacity: 1;
+    }
+
+    #talk_a {
+      font-family: "Merienda", cursive;
+    }
+
+    #name {
+      font-family: "Sofia", cursive;
+      font-size: 60px;
+      text-shadow: 2px 2px 10px #e3dfae;
+    }
+
+    #mission {
+      font-size: 18px;
+    }
+
+    #lightning {
+        opacity: 0;
+        transition: opacity 1s ease;
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+    }
+
+    #lightning.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="talk1">Hmm... It's really dark here</h1>
+  <h1 id="talk_a">Need some light traveler?</h1>
+  <h1 id="talk2">Y-Yes! Thank you... um...?</h1>
+  <h1 id="name">ARTEMIS</h1>
+  <p id="mission">(remember what you came here for!)</p>
+  <img id="lightning" alt="lightning" onclick="finish()" src="https://pnghunter.com/get-logo.php?id=15625">
+
+  <script>
+    const fadeIn = (el) => el.classList.add("show");
+    const fadeOut = (el) => el.classList.remove("show");
+
+    const t1 = document.getElementById("talk1");
+    const at = document.getElementById("talk_a");
+    const t2 = document.getElementById("talk2");
+    const name = document.getElementById("name");
+    const mission = document.getElementById("mission");
+    const lightning = document.getElementById("lightning");
+
+    // Step 1: fade in talk1
+    setTimeout(() => {
+      fadeIn(t1);
+    }, 500);
+
+    // Step 2: fade out talk1, fade in talk_a
+    setTimeout(() => {
+      fadeOut(t1);
+      fadeIn(at);
+    }, 4000);
+
+    // Step 3: fade out talk_a, fade in talk2
+    setTimeout(() => {
+      fadeOut(at);
+      fadeIn(t2);
+    }, 6500);
+
+    // Step 4: background change and final fade-ins
+    setTimeout(() => {
+      document.body.style.backgroundImage = 'url("https://mrwallpaper.com/images/hd/river-full-moon-night-sky-photography-axqgirrdgl8scywt.jpg")';
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundPosition = "center";
+      fadeOut(t2);
+      fadeIn(name);
+      fadeIn(lightning);
+      fadeIn(mission);
+    }, 9000);
+
+    // Dummy function to avoid console error
+    function finish() {
+      alert("You clicked the lightning!");
+    }
+  </script>
+</body>
+</html>
