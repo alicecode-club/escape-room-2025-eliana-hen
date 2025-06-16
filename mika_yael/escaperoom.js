@@ -49,4 +49,5 @@ function finish(){
 
 function check2(){
     alert("To the next room!");
+    window.location.href = "";
 }
