@@ -22,8 +22,8 @@
     #hand-container {
       position: absolute;
       margin-left:-70px;
-      margin-bottom:80px;
-      bottom: -500px; /* Start below the screen */
+      margin-bottom:-20px;
+      /* bottom: -500px; Start below the screen */
       animation: peekAndClick 6s ;
     }
 
