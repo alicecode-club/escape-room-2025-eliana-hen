@@ -23,9 +23,8 @@
       position: absolute;
       margin-left:-70px;
       margin-bottom:80px;
-
-      bottom: -200px; /* Start below the screen */
-      animation: peekAndClick 4s ;
+      bottom: -300px; /* Start below the screen */
+      animation: peekAndClick 6s ;
     }
 
     #hand {
