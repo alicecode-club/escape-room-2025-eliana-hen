@@ -17,6 +17,7 @@ function warning(){
       alert("WHY WOULD YOU CLICK THIS?!!?!??! ARE YOU CRAZY? ")
       alert("THE TIME MACHINE IS NOW WORKING!!!!!")
       alert("YOU WILL HAVE TO TRAVEL TO 4 DIFFERENT PLACES!!!!!!")
+      window.location.href = "../mika_yael/escaperoom.html";
 }
 
 
