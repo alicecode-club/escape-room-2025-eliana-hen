@@ -166,19 +166,19 @@ h4{
 
 #t1 {
     top: 100px;
-    animation: moveTarget 4s linear infinite;
+    animation: moveTarget 5s linear infinite;
 
 }
 
 #t2 {
     top: 250px;
-    animation: moveTarget 1.4s linear infinite;
+    animation: moveTarget 3.7s linear infinite;
 
 }
 
 #t3 {
     top: 400px;
-    animation: moveTarget 2s linear infinite;
+    animation: moveTarget 4s linear infinite;
 
 }
 
