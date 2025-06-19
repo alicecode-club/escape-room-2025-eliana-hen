@@ -6,10 +6,10 @@ body {
 .container {
     position: relative;
     width: 100%;
-    height: 500px; /* אתה יכול לשנות את הגובה בהתאם */
+    height: 500px;
 }
 
-.background {
+.background
     padding-top: 0%;
     
 }
