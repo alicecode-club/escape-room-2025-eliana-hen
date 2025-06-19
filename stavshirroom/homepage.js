@@ -1,3 +1,4 @@
+
 var tries = 0;
 function start() {
     alert("🌳Warm-up activity: Before you begin, our main character in the story is the tree Moti. You will soon understand why. But before that \n\nYour mission starts with finding the smiling tree hidden on the screen! 🧐🌟\nHe's not just any tree he is very special – he has big eyes 👀 and a happy face and he also can talk 😊, and he’ll guide you through the journey.\n\nFind ALL the hidden versions of the Tree Moti in under 2 minutes! ⏱️ Only then will you unlock the next clue.\n\nReady? Let’s go");
@@ -62,3 +63,18 @@ function close_popup(popup_instructions) {
     popup.style.display = "none";
     window.location.replace("question.html");
 }
+=======
+
+function start(){
+    alert("  פעילות חימום: לפני שתתחילו הדמות המרכזית שלנו בסיפור היא העץ מוטי תכף תבינו למה אבל לפני זה כדי להמשיך בחדר תצטרכו למצוא כמה שיותר תמונות מוחבאות במסך של העץ מוטי רק אם תמצאו את כולם תוכלו להמשיך בדרככם,ולקבל את שאר ההוראות,יש לכם דקה וחצי על השעון בהצלחה בהצלחהה:)♡")
+}
+function open_popup(popup_instructions) {
+    var popup = document.getElementById(popup_instructions);
+    popup.style.display = "block";
+}
+function close_instructions(popup_instructions) {
+    var popup = document.getElementById(popup_instructions);
+    popup.style.display = "none";
+}
+
+
