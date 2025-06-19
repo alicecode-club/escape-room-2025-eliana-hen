@@ -1,0 +1,51 @@
+body {
+    background-image: url("https://thumbs.dreamstime.com/b/cartoon-galaxy-background-cool-wallpaper-336155486.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+#popup {
+    background-color: black;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: white;
+    padding: 15px;
+    width: 60%;
+    box-shadow: 0 0 20px #00ffcc;
+    border-radius: 15px;
+}
+
+#got_it,#start{
+    background-color: #0ffcc0;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    size: 40px;
+
+}
+
+.rocket {
+    display: none;
+    position: absolute;
+    bottom: -600px;
+    left: 40%;
+    width: 350px;
+}
+.fly{
+    display: block;
+    animation: fly 10s .5s ease-in forwards;
+}
+@keyframes fly {
+    0% {
+        bottom: -600px;
+    }
+
+    100% {
+        bottom: 100%;
+    }
+}

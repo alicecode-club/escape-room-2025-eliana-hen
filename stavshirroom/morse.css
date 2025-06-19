@@ -1,0 +1,82 @@
+body{
+    background-image: url("https://m.media-amazon.com/images/I/61U5HBZcNOL._AC_UF894,1000_QL80_.jpg");
+    margin:0;
+    padding: 0;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+h1{
+    color:white;
+    size:50px;
+}
+#letter{
+  position:fixed;
+  width:20px;
+  margin-top:20px;
+  margin-right: 20000px;
+  margin-left: 1400px;
+}
+h1{
+   color: white;
+  font-family: cursive;
+}
+#girl{
+  position:fixed;
+   width:300px;
+    margin-top:300px;
+}
+#moti_tree{
+  position:fixed;
+   width:200px;
+   margin-top:340px;
+  margin-left: 150px;
+  
+}
+.instructions{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    font-size: 30px;
+    padding: 20px;
+    width: 60%;
+
+
+}
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+#speech-bubble1 {
+    display: block;
+    width: 230px; 
+    height: 160px; 
+  border-radius:50%;
+    background: #5ac4ed;
+    position: absolute;
+    left: 200px;
+    border-radius: 30px;
+  font-size:20px;
+  padding:7px;
+    margin-top:50px;
+
+ }
+#speech-bubble2{
+      display: block;
+    width: 150px; 
+    height: 120px; 
+  border-radius:50%;
+    background: #5ac4ed;
+    position: absolute;
+    left: 280px;
+    border-radius: 30px;
+  font-size:20px;
+  padding:7px;
+    margin-top:300px;
+}

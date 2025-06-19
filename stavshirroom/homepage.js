@@ -1,8 +1,8 @@
 var tries = 0;
 function start() {
-    alert("  Warm-up activity: Before you begin, our main character in the story is the tree Moti. You will soon understand why. But before that, in order to continue in the room, you will need to find as many hidden pictures as possible on the screen of the tree Moti. Only if you find them all can you continue on your way and receive the rest of the instructions. You have two minutes on the clock. Good luck :)♡");
-    setTimeout(timer, 5000);
-    alert("  Warm-up activity: Before you begin, our main character in the story is the tree Moti. You will soon understand why. But before that, in order to continue in the room, you will need to find as many hidden pictures as possible on the screen of the tree Moti. Only if you find them all can you continue on your way and receive the rest of the instructions. You have two minutes on the clock. Good luck :)😊♡");
+    alert("🌳Warm-up activity: Before you begin, our main character in the story is the tree Moti. You will soon understand why. But before that \n\nYour mission starts with finding the smiling tree hidden on the screen! 🧐🌟\nHe's not just any tree he is very special – he has big eyes 👀 and a happy face and he also can talk 😊, and he’ll guide you through the journey.\n\nFind ALL the hidden versions of the Tree Moti in under 2 minutes! ⏱️ Only then will you unlock the next clue.\n\nReady? Let’s go");
+    setTimeout(timer, 90000);
+    alert(" 🌳Warm-up activity: Before you begin, our main character in the story is the tree Moti. You will soon understand why. But before that \n\nYour mission starts with finding the smiling tree hidden on the screen! 🧐🌟\nHe's not just any tree – he has big eyes 👀 and a happy face and he also can talk 😊, and he’ll guide you through the journey.\n\nFind ALL the hidden versions of the Tree Moti in under 2 minutes! ⏱️ Only then will you unlock the next clue.\n\nReady? Let’s go");
     setInterval(timer, 120000);
 }
 function timer() {
@@ -16,12 +16,12 @@ function timer() {
     else {
         if(isNaN(answer)){//בדיקה האם נכתב מספר?
             alert("please write only in numbers❗")
-            setTimeout(timer,1000);  
+            setTimeout(timer,2000);  
         }  
         else {
             alert("❌You didn't succeed, it's okay🙃. You have 2 more minutes to find all of Moti's pictures and then you can continue solving the riddels.");//הודעה לנסיון שני
             tries += 1;
-            setTimeout(timer2, 5000);
+            setTimeout(timer2, 120000);
         }
     }
 }
@@ -30,7 +30,7 @@ function timer() {
         var userinput2=parseInt(answer2);
         if(isNaN(answer2)){//בדיקה האם נכתב מספר?
             alert("please write only in numbers❗")
-            setTimeout(timer2,5000);
+            setTimeout(timer2,2000);
         }
         if (answer2 === 5) {
             alert("🎉Well done! Now you can continue solving the riddles.");
@@ -60,4 +60,6 @@ function open_popup(popup_instructions) {
 function close_popup(popup_instructions) {
     var popup = document.getElementById("popup_instructions");;
     popup.style.display = "none";
+    setTimeout(2000);
+    window.location.replace("question.html");
 }
