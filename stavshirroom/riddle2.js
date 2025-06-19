@@ -1,7 +1,7 @@
 var score = 0;
-alert("Hi welcome to the next riddle!,here you have to click on the pictures Use the clues and the picture to choose the correct name of the tree, good luck! 🌳")
+alert("Hi welcome to the next riddle!,here you have to click on the pictures Use the clues and the picture to choose the correct name of the tree, good luck! 🌳");
 setTimeout(5000);
-alert("Click on the image again after you have chosen the answer.")
+alert("Click on the image again after you have chosen the answer.");
 function image1() {
     alert("Your clues are:🔍\nmy fruit wears a little hat and falls to the ground in autumn and start with the letter a 🍂🔤\n 🚢 long ago,I helped build boats and ships and i am very old\n🛡️⚡️ In ancient myths, i was sacred to Zeus and Thor\n🏅my leaves decorate military ranks and academic honors in several countries");
     var answer1 = document.getElementById("name1").value;//לקיחת תשובה מהמשתמש
@@ -56,7 +56,7 @@ function image6() {
 function check_riddle_2() {
     if (score >= 4) {
         alert("you won!🏆,your score:" + score);
-        window.location.replace("morse.html");
+        window.location.replace("space.html");
     } 
     else {
         alert("you lose,your score:" + score);

@@ -60,6 +60,5 @@ function open_popup(popup_instructions) {
 function close_popup(popup_instructions) {
     var popup = document.getElementById("popup_instructions");;
     popup.style.display = "none";
-    setTimeout(2000);
     window.location.replace("question.html");
 }

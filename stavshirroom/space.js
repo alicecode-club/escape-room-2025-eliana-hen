@@ -53,5 +53,6 @@ function check_code(){
 function rocket(){
     var show_rocket = document.getElementById("rocket");
     show_rocket.classList.add("fly");
+    window.location.replace("morse.html");
 
 }
