@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Ball.css">
     <title>Ball</title>
-</head>
+</head> 
 <body>
-    <button id="btn1" onclick="oopen_btn1()">🔒</button>
-    <div class="lock-container">
-        <span class="close-btn" onclick="close_btn1()">×</span>
-        <input type="text" placeholder="מספרין מקטן לגדול" class="code-input" pattern="[0-9]*" maxlength="4" inputmode="numeric">
-    </div>
     <script src="Ball.js"></script>
-    <img src="https://mail.google.com/mail/u/0?ui=2&ik=9c13c0af7b&attid=0.1&permmsgid=msg-a:r3049781180535883809&th=197650491ede4387&view=fimg&fur=ip&permmsgid=msg-a:r3049781180535883809&sz=s0-l75-ft&attbid=ANGjdJ8hl_jzNx4fRq49-26U9jgs9XMhRvnJUpu9ParWbX2tkxGd7Z10RSHuKY5gLGYc4MmC0M6VKfCae5yEKH5JNJYeNNTKiVwysRbu-0kDm6KkUf6Cr0Urg_8M_gs&disp=emb&realattid=ii_mbtlvn610&zw" alt="background" class="background">
+    <button id="btn1" onclick="oopen_btn1()">🔒</button>
+    <div id="lock-container">
+        <span class="close-btn" onclick="close_btn1()">×</span>
+        <input id="codeInput" type="text" placeholder="מספרין מקטן לגדול" class="code-input" pattern="[0-9]*" maxlength="4" inputmode="numeric">
+        <button onclick="checkCode()">בדוק</button>
+    </div>
+
+    <img src="./‏‏תיקיה חדשה/image.png" alt="background" class="background">
 </body>
 </html>

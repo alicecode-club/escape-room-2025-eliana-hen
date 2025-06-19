@@ -5,9 +5,25 @@
     border-radius: 12px;
     padding: 16px;
     text-align: center;
+    width: 40px;    
+    height: 40;
+    position: absolute;       
+    top: 45.6%;
+  left: 30%;       
+  display: flex;            
+  justify-content: center; 
+  align-items: center;
+
 }
 
-.lock-container {
+.lock-container {   
+    height: 150;
+    position: absolute;       
+    top: 45.6%;
+  left: 30%;       
+  display: flex;            
+  justify-content: center; 
+  align-items: center;
     display: none;
     align-items: center;
     border: 1px solid #ccc;
