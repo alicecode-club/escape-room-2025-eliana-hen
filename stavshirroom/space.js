@@ -48,6 +48,10 @@ function check_code(){
     alert("🎉 Great job you solve it!,You called for help, You turned on the transmitter📡,thanks to you the forest rangers received the emergency message🌟🏆");
     setTimeout(rocket,2000);
    }
+   else{
+    alert("The code is wrong!🔐❌,you are stil in space🌌🪐,but dont worry you can try write the code again🙂");
+    setTimeout(check_code,2000);
+   }
 
 }
 function rocket(){
