@@ -1,4 +1,5 @@
 var score = 0;
+setTimeout(start,2000);
 function start(){
     alert("Hi welcome to the next riddle!,here you have to click on the pictures Use the clues and the picture to choose the correct name of the tree, good luck! 🌳");
     setTimeout(5000);

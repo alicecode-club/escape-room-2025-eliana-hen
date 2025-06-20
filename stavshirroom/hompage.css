@@ -1,6 +1,5 @@
 body{
     background-image: url("background.jpeg");
-
     background-repeat: no-repeat;
     background-size:cover;
     background-size: 100% auto;
@@ -8,27 +7,20 @@ body{
 h1{
     color: black;
     margin:15px;
-    padding: 15px;
+    padding: 5px;
+    font-family: cursive;
     line-height: 20px;
     position: relative;
 }
 h2{
     color: black;
     margin-right: 5px;   
-    padding: 0.30px;
-    
-
-
-}
-h1,h2{
-    color: black;
-    margin-right: 20px;
-    line-height: 20px;
+    padding: 0.03px;
+    font-family: cursive;
 }
 
 #futurehaedline{
     background-color: wheat;
-
     height: 115px;
     width: 100%;
     width: 100%;
@@ -46,7 +38,6 @@ button{
     padding: 15px 30px;
     margin-right: 50vh 50vw;
     margin-left: 50vh 50vw;
-
     display: block;
     box-shadow: 0 0 5px cyan,
     0 0 25px cyan;
@@ -54,9 +45,6 @@ button{
 }
 button:hover{
     box-shadow: 0 0 5px cyan,0 0 25 px cyan,0 0 50px cyan,0 0 100px cyan,0 0 200px cyan;
-}
-.instructions{
-    
 }
 .instructions {
     display: none;
@@ -102,31 +90,34 @@ button:hover{
  }
  tree{
     position:fixed;
+    margin-top:100px;
  }
  #tree2{
     position:fixed;
     width:55px;
-    margin-top:320px;
-    margin-right: 300px;
+    margin-top:25px;
+    margin-right: 50px;
  }
  #tree3{
     position:fixed;
-    width:70px;
-    margin-left: 650px;;
-    margin-top: -100px;
+    width:65px;
+    margin-left: 750px;
+    margin-top: -5px;
  }
  #tree4{
     position:fixed;
-    width:85px;
-    margin-top: 330px;
-    margin-left: 500px;
+    width:70px;
+    margin-top: 310px;
+    margin-left: 700px;
     margin-right: 300px;
 
  }
  #tree5{
     position:fixed;
-    width:60px;
-    margin-right: 500px;
+    width:55px;
+    margin-top: 500px;
+    margin-left: 1300px;
+    margin-right: 500;
     cursor: pointer;
     
  }
