@@ -32,7 +32,7 @@ function checkAnswer(){
     correct_word="robots";
     word_input=document.getElementById("word").value;
     if (correct_word==word_input){
-        window.alert(" Hi we are stav and shir and we are saying: Wow, this one was not easy… but you did it!🎉✨\nYou solved all the riddels and the escaped room\nThe room is open now hope you enjoy the journey!🎇🗝️");
+        window.alert("Hi we are stav and shir and we are saying: 'Wow, this one was not easy… but you did it!🎉✨\nYou solved all the riddels and the escaped room\nThe room is open now hope you enjoy the journey!'🎇🗝️");
         setTimeout(transition,2000);
     }else if(word_input=="robot"){
         alert("You're so close!,Just take another look at the translate and the word you wrote.\nMaybe it needs a little adjustment\nTry thinking in multiples instead of one🌟");
