@@ -53,29 +53,50 @@ h1{
     right: 10px;
 }
 #speech-bubble1 {
-    display: none;
-    width: 230px; 
-    height: 160px; 
+  display: none;
+  width: 230px; 
+  height: 160px; 
   border-radius:50%;
-    background: #5ac4ed;
-    position: absolute;
-    left: 200px;
-    border-radius: 30px;
+  background: #5ac4ed;
+  position: absolute;
+  left: 200px;
+  border-radius: 30px;
   font-size:20px;
   padding:7px;
-    margin-top:50px;
+  margin-top:50px;
 
  }
 #speech-bubble2{
-      display: none;
-    width: 150px; 
-    height: 120px; 
+  display: none;
+  width: 150px; 
+  height: 120px; 
   border-radius:50%;
-    background: #5ac4ed;
-    position: absolute;
-    left: 280px;
-    border-radius: 30px;
+  background: #5ac4ed;
+  position: absolute;
+  left: 280px;
+  border-radius: 30px;
   font-size:20px;
   padding:7px;
-    margin-top:300px;
+  margin-top:300px;
+}
+a{
+  text-decoration: none;
+  background-color:#0ffcc0;
+  border-style: dotted;
+  border-width: 5px;
+  font-family: cursive;
+  color:black;
+}
+a:hover{
+  color:white;
+}
+.submit-btn{
+  background-color: #0ffcc0;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  size: 40px;
+}
+a:hover{
+  color:white;
 }
