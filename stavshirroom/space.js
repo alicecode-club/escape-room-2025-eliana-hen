@@ -1,4 +1,4 @@
-
+alert("The forests are in danger, and time is running out.⏳\nA secret message holds the key to saving the trees🌳\nNow, the fate of the trees is in your hands🤲🌍\nYou arrived to space, if you wonder how did you get here so quickly?\nIt’s very simple you are in the future and the real adventure begins🚀✨ ");
 function showbutton() {
     var popup = document.getElementById("popup");
     popup.style.display = "block";
@@ -53,6 +53,9 @@ function check_code(){
 function rocket(){
     var show_rocket = document.getElementById("rocket");
     show_rocket.classList.add("fly");
-    window.location.replace("morse.html");
+    setTimeout(transition,10000);
 
+}
+function transition(){
+    window.location.replace("morse.html");  
 }
