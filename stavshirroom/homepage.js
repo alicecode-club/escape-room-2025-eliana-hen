@@ -16,7 +16,7 @@ function timer() {
     }
     else {
         if(isNaN(answer)){//בדיקה האם נכתב מספר?
-            alert("please write only in numbers❗")
+            alert("please write only in numbers❗");
             setTimeout(timer,2000);  
         }  
         else {
