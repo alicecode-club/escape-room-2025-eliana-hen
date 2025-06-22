@@ -1,7 +1,7 @@
 var score = 0;
 setTimeout(start,2000);
 function start(){
-    alert("Hi welcome to the next riddle!,here you have to click on the pictures Use the clues and the picture to choose the correct name of the tree, good luck! 🌳");
+    alert("Hi welcome to the next riddle!,here you have to click on the pictures. Use the clues and the picture to choose the correct name of the tree, good luck! 🌳");
     setTimeout(5000);
     alert("Click on the image again after you have chosen the answer.");
 }
@@ -14,7 +14,7 @@ function image1() {
     }
 }
 function image2() {
-    alert("your clues are:🔍\nYou won't find me in Israel, I need rain, heat, and humidity all year round 🌦️\nI start \nI am the origin of a sweet thing that people of all ages love ☕️\nInside I have purple or brown seeds 🌰");
+    alert("your clues are:🔍\nYou won't find me in Israel, I need rain, heat, and humidity all year round 🌦️\nI am the origin of a sweet thing that people of all ages love ☕️\nInside I have purple or brown seeds 🌰");
     var answer2 = document.getElementById("name2").value;//לקיחת תשובה מהמשתמש
     if (answer2.toLowerCase() === "cocoa tree") {//בדיקת תשובה 2
         score++;
