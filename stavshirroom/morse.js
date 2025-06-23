@@ -45,7 +45,7 @@ function checkAnswer(){
      
 }
 function transition(){
-  window.location.replace("closing-room/index.html");
+    window.location.href = "../closing-room/index.html";
 }
 //function close_popup(popup_instructions) {
     //var popup = document.getElementById("popup_instructions");
