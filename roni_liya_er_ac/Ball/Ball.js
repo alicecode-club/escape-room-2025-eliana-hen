@@ -17,3 +17,23 @@ function checkCode() {
         alert('אפשר לנסות שוב');
       }
 }
+
+var codeTry = null;
+
+  while (codeTry === null || codeTry.trim() === "") {
+  codeTry = prompt("מספרים בנשף מקטן לגדול");
+  } 
+
+
+if (codeTry=="2589") {
+  alart("נהדר!!!");
+  setTimeout(function() {
+    window.location.href = "..Ball/room.html";
+  }, 700);
+}
+else {
+  alart("נסה\י שוב")
+  setTimeout(function() {
+    codeTry = prompt("מספרים בנשף מקטן לגדול");  }, 1000);
+}
+

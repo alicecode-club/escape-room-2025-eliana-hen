@@ -1,15 +1,14 @@
-   alart 
-   function openPopup() {
+function openPopup() {
       document.getElementById("popupOverlay").style.display = "flex";
       document.getElementById("message").textContent = "";
       document.getElementById("answerInput").value = "";
-    }
+}
 
-    function closePopup() {
+function closePopup() {
       document.getElementById("popupOverlay").style.display = "none";
-    }
+}
 
-    function checkAnswer() {
+function checkAnswer() {
       const input = document.getElementById("answerInput").value.trim().toLowerCase();
       const message = document.getElementById("message");
 
@@ -26,4 +25,12 @@
         message.style.color = "red";
         message.textContent = "תשובה שגויה... נסה/י שוב.";
       }
-    } 
+} 
+
+alart('ברוכים הבאים למאה ה19');
+setTimeout(function() {
+  alart('יש פה נשף גדול כדי שנבדוק אם יש שם משהו שיעזור לנו לחזור להווה');
+}, 2700);
+setTimeout(function() {
+  alart("אין לנו הזמנה לנשף בואו נחפש הזמנה");
+}, 5500);

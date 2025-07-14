@@ -16,15 +16,13 @@
 
 }
 
-.lock-container {   
-    height: 150;
-    position: absolute;       
+.lock-container {
+    height: 150px; /* הוספת יחידת מידה */
+    position: absolute;
     top: 45.6%;
-  left: 30%;       
-  display: flex;            
-  justify-content: center; 
-  align-items: center;
-    display: none;
+    left: 30%;
+    display: none; /* רק הצהרה אחת נדרשת */
+    justify-content: center;
     align-items: center;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -32,6 +30,7 @@
     width: fit-content;
     background-color: #f7f7f7;
 }
+
 
 .lock-icon {
     font-size: 20px;
@@ -52,4 +51,13 @@
   position: relative;
   display: inline-block;
   display: block;
+  
+}
+
+body{
+  background-image: url("lrlol.png");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-size: 100% auto;
+    display: block;
 }
